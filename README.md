@@ -1,7 +1,7 @@
 # Learning-BigData-Hadoop
 
 ######################################
-##### Environment Set for Hadoop #####
+##### Environment Setup for Hadoop #####
 ######################################
 
 - #Installation of Virtual machine:

@@ -1,6 +1,8 @@
 # Learning-BigData-Hadoop
 
-Environment Set for Hadoop:
+######################################
+##### Environment Set for Hadoop #####
+######################################
 
 - #Installation of Virtual machine:
 1. Go to https://www.virtualboc.org and download a version for your OS.(I have installed for Ubuntu)

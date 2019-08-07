@@ -93,4 +93,14 @@
         - hiveCtx.registerFunction("square", lambda x:x*x, IntegerType())
         - df = hiveCtx.sql("SELECT square('someNumericFiled') FROM tableName) 
         
-        
+**How to run python code in spark using dataframes?**
+Run following command in hadoop virtual box:
+1. Login '$ ssh maria_dev@127.0.0.1 -p 2222 '.
+2. $ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Hadoop-with-Spark/WorstMovieDataFrame.py .
+3. $ cd ml-100k/
+5. check u.item data file in this folder by using '$ ls' command.
+6. $ cd ..
+7. $ export SPARK_MAJOR_VERSION=2
+8. $ spark-submit WorstMovieDataFrame.py
+
+

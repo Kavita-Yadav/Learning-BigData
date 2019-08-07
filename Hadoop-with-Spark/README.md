@@ -103,4 +103,9 @@ Run following command in hadoop virtual box:
 7. $ export SPARK_MAJOR_VERSION=2
 8. $ spark-submit WorstMovieDataFrame.py
 
+**Use MLib in Spark**
+
+- $ export SPARK_MAJOR_VERSION=2
+- $ spark-submit MovieRecommendationMLib.py
+
 

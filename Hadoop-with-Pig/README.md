@@ -21,6 +21,7 @@
       DUMP oldestFiveStarMovies;
       
  - PIGSTORAGE
+      
       Use PigStorage if you need a different delimeter.
       
        metadata = LOAD '/user/maria_dev/ml-10k/u.item'
@@ -28,7 +29,8 @@
                   AS (movieID:int, movieTitle: chararray, releaseDate:chararray, videoRelease: chararray, imbdlink:chararray);
           
  - FOREACH/GENERATE
-      Creating a realtion from another realtion.
+     
+     Creating a realtion from another realtion.
       
        nameLookup = FOREACH metadata GENERATE movieID, movieTitle,
                     ToUnixTime(ToDate(releaseDte, 'dd-MMM-yyyy')) AS releaseTime;

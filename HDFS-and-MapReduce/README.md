@@ -168,5 +168,5 @@ _iExample of MapReduce for Movie Ratings data in python using above datatable:i_
     - yum install nano
  8. wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/MRJobExample.py
  9. If run locally, use command 'python MRJobExample.py u.data'.
-10. If run with hadoop, use command ' python MostPopularMovie.py -r hadoop --hadoop-streaming-jar 
+10. If run with hadoop, use command ' python MRJobExample.py -r hadoop --hadoop-streaming-jar 
      /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar u.data '.

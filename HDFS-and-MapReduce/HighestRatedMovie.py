@@ -19,7 +19,7 @@ class RatingsBreakdown (MRJob):
 
        #Reducer function
        def reducer_count_ratings(self,key,values):
-            yield key, sum(values)
+            yield str(sum(values)).zfill(5), key
             
        #Sort function
       def reducer_sorted_output(self, count,movies):

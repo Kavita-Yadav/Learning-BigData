@@ -7,7 +7,7 @@
 
 **Let's understand it with example,find oldest 5-star movie using Pig**
 
-- Join
+- JOIN
 
       DESCRIBE fievStarMovies;
       Describe nameLookup;
@@ -15,7 +15,30 @@
       DESCRIBE fiveStarsWithData;
       DUMP fiveStarsWithData;
 
-- Order By
+- ORDER BY
 
       oldestFiveStarMovies = ORDER fiveStarWithData BY nameLookup::releaseTime;
       DUMP oldestFiveStarMovies;
+      
+ - PIGSTORAGE
+      Use PigStorage if you need a different delimeter.
+      
+       metadata = LOAD '/user/maria_dev/ml-10k/u.item'
+                  USING PigStorage ('|') 
+                  AS (movieID:int, movieTitle: chararray, releaseDate:chararray, videoRelease: chararray, imbdlink:chararray);
+          
+ - FOREACH/GENERATE
+      Creating a realtion from another realtion.
+      
+       nameLookup = FOREACH metadata GENERATE movieID, movieTitle,
+                    ToUnixTime(ToDate(releaseDte, 'dd-MMM-yyyy')) AS releaseTime;
+                    
+ - GROUP BY
+          
+        ratingsByMovie = GROUP ratings BY movieID;
+        
+ - FILTER
+ 
+       fiveStarMovie = FILTER avgRatings BY avgRating > 4.0;
+                  
+      

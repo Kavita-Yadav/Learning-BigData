@@ -22,6 +22,9 @@
 1. Go to http://127.0.0.1:8888/ .
 2. Click on 'Please Disable Popup Blocker'
 3. Sign in with username: maria_dev and password: maria_dev
+4. To reset password for user 'admin':
+        - su root
+        - ambari-admin-password-reset
 
 - #Data preparation:
 1. Go to https://grouplens.org/ .

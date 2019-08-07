@@ -8,12 +8,12 @@
 **Let's understand it with example,find oldest 5-star movie using Pig**
 
 - Join
-DESCRIBE fievStarMovies;
-Describe nameLookup;
-fiveStarsWithData = JOIN fiveStarMovies BY movieID, nameLookup BY movieID;
-DESCRIBE fiveStarsWithData;
-DUMP fiveStarsWithData;
+      DESCRIBE fievStarMovies;
+      Describe nameLookup;
+      fiveStarsWithData = JOIN fiveStarMovies BY movieID, nameLookup BY movieID;
+      DESCRIBE fiveStarsWithData;
+      DUMP fiveStarsWithData;
 
--Order By
-oldestFiveStarMovies = ORDER fiveStarWithData BY nameLookup::releaseTime;
-DUMP oldestFiveStarMovies;
+- Order By
+    oldestFiveStarMovies = ORDER fiveStarWithData BY nameLookup::releaseTime;
+    DUMP oldestFiveStarMovies;

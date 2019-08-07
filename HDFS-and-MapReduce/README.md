@@ -147,24 +147,28 @@ _iExample of MapReduce for Movie Ratings data in python using above datatable:i_
    
   
                   from mrjob.job import MRJob
- from mrjob.step import MRStep
-   class RatingsBreakdown (MRJob):
-     def steps(self):
-       return[
-              MRStep(mapper = self.mapper_get_ratings,
-                      reducer = self.reducer_count_ratings)]
+                  from mrjob.step import MRStep
+                  class RatingsBreakdown (MRJob):
+                      def steps(self):
+                          return[
+                             MRStep(mapper = self.mapper_get_ratings,
+                             reducer = self.reducer_count_ratings)
+                          ]
    
-   #Mapper function
-     def(mapper_get_ratings(self, _ , line):
-        (userID, movieID, rating, timestamp) =
-        line.split('\t') yield rating,1
+                   #Mapper function
+                       def mapper_get_ratings(self, _ , line):
+                           (userID, movieID, rating, timestamp) = line.split('\t') 
+                           yield rating,1
     
-  #Reducer function
-     def(reducer_count_ratings(self,key,values):
-        yield key, sum(values)
+                   #Reducer function
+                       def reducer_count_ratings(self,key,values):
+                           yield key, sum(values)
         
- if __name__ == '__main__':
-      RatingBreakdown.run()
+                  if __name__ == '__main__':
+                      RatingBreakdown.run()
  
  **Runing MapReduce with MRJobs**
-
+- HDP 2.6.5
+- Install PIP using command " yum install python-pip"
+- Install MRJob using " pip install mrjob==0.5.11
+- Install nano using " yum install nano"

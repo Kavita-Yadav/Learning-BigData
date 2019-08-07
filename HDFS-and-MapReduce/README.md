@@ -144,28 +144,7 @@ _iExample of MapReduce for Movie Ratings data in python using above datatable:i_
        1-> 1,1  2-> 1,1  3-> 1,1  4-> 1
                 | reduce
        1,2  2,2  3,2  4,1
-   
-  
-                  from mrjob.job import MRJob
-                  from mrjob.step import MRStep
-                  class RatingsBreakdown (MRJob):
-                      def steps(self):
-                          return[
-                             MRStep(mapper = self.mapper_get_ratings,
-                             reducer = self.reducer_count_ratings)
-                          ]
-   
-                   #Mapper function
-                       def mapper_get_ratings(self, _ , line):
-                           (userID, movieID, rating, timestamp) = line.split('\t') 
-                           yield rating,1
-    
-                   #Reducer function
-                       def reducer_count_ratings(self,key,values):
-                           yield key, sum(values)
-        
-                  if __name__ == '__main__':
-                      RatingBreakdown.run()
+
  
  **Runing MapReduce with MRJobs**
 - HDP 2.6.5

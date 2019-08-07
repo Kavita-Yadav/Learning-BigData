@@ -147,7 +147,26 @@ _iExample of MapReduce for Movie Ratings data in python using above datatable:i_
 
  
  **Runing MapReduce with MRJobs**
-- HDP 2.6.5
-- Install PIP using command " yum install python-pip"
-- Install MRJob using " pip install mrjob==0.5.11
-- Install nano using " yum install nano"
+ 1. Start virtual box hadoop machine.
+ 2. Login via terminal by following command ' ssh maria_dev@127.0.0.1 -p 2222 '
+ 3. pwd: maria_dev
+ 4. su root
+ 5. pwd: hadoop
+ 6. If HDP 2.6.5, run following commands:
+    - yum install python-pip
+    - pip install mrjob==0.5.11
+    - yum install nano
+
+ 7. If HDP 2.5, run following commands:
+    - cd /etc/yum.repos.d
+    - cp sanbox.repo /tmp
+    - rm sandbox.repo
+    - cd ~
+    - yum install python-pip
+    - pip install google-api-python-client==1.6.4
+    - pip insatll mrjob==0.5.11
+    - yum install nano
+ 8. wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/MRJobExample.py
+ 9. If run locally, use command 'python MRJobExample.py u.data'.
+10. If run with hadoop, use command ' python MostPopularMovie.py -r hadoop --hadoop-streaming-jar 
+     /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar u.data '.

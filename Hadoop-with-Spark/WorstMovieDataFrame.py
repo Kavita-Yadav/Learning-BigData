@@ -1,4 +1,4 @@
-
+# consider movie that is at least rated by 10 peoples
 from pyspark.sql import SparkSession
 from pyspark.sql import Row
 from pyspark.sql import functions

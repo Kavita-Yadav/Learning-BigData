@@ -1,0 +1,7 @@
+# sqoop: Export data from Hive to MySQL
+sqoop export --connect jdbc:mysql://localhost/dataset_name -m 1 --driver com.mysql.jdbc.Driver --table table_name --export -dir
+/apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
+
+# example of movielens dataset import movies table
+sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export -dir
+/apps/hive/warehouse/movies --input-fields-terminated-by '\0001'

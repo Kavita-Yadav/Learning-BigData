@@ -38,7 +38,7 @@ Hadoop cluster look like a realtional database.
   partitioned.
 - In short, Except record-level stuff you can do with MySQL, similar you can do with HiveQL.
 
-## How to run query of Hive ?
+## How to run query in Hive ?
 - Pull up Ambari on http://127.0.0.1:8080/ .
 - Sign in with username: maria_dev pwd: maria_dev.
 - Click on Grid next to Admin and go to "Hive View".
@@ -57,6 +57,7 @@ Hadoop cluster look like a realtional database.
 - Change column name: movieID, title
 - Click on Upload Table.
 - Now write a query in query editiors.
+- You can copy paste the scripts from .txt file to see how hive works.
 
 
 

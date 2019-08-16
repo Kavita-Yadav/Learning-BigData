@@ -32,3 +32,19 @@ importing or exporting your data.
                                     
   
  ## How to use sqoop ?
+  Note: Target table must be exist in MySQL with expected column order. For examples: please use the data from data folder.
+  
+  In Hadoop virtual machine, follow the following steps:
+  1. $ mysql -u root -p
+     pwd: hadoop
+  2. $ exit.
+  3. $ wget http://media.sundog-soft.com/hadoop/movielens.sql .
+  4. #import moviedata in MySQL:
+     $ mysql -u root -p
+  6. mysql> SET NAMES 'utf8';
+     mysql> SET CHARACTER SET utf8;
+          > use movielens;
+          > source movielens.sql;
+          > show tables;
+          > select * from movies limit 10;
+  

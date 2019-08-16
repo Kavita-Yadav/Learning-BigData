@@ -57,7 +57,7 @@ Hadoop cluster look like a realtional database.
 - Change column name: movieID, title
 - Click on Upload Table.
 - Now write a query in query editiors.
-- You can copy paste the scripts from .txt file to see how hive works.
+- You can copy paste the scripts from .txt file into query editor to see how hive works.
 
 
 

@@ -1,0 +1,7 @@
+# sqoop: Import data from MySQL to directly into Hive.
+
+sqoop import --connect jdbc:mysql://localhost/dataset_name --driver com.mysql.jdbc.Driver --table table_name --hive-import
+
+ForExample: Import movies table from movielens data, from MySQL to Hive:
+
+sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1 --hive-import

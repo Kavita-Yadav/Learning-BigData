@@ -38,6 +38,25 @@ Hadoop cluster look like a realtional database.
   partitioned.
 - In short, Except record-level stuff you can do with MySQL, similar you can do with HiveQL.
 
+## How to run query of Hive ?
+- Pull up Ambari on http://127.0.0.1:8080/ .
+- Sign in with username: maria_dev pwd: maria_dev.
+- Click on Grid next to Admin and go to "Hive View".
+- Write a query in query editor and execute it by clicking on "Execute" button just like you write query in SQL.
+- You can upload table in Hive by clicking on "Upload Table" -> select "File type".
+- You can cutomize File type by clicking on "settings" icon. For example: for tab seprated value: 
+      Change the "Field Delimeter" into " 9 TAB(horizontal tab)" and Close.
+- Now, click on "Choose File" and select file from local machine and upload it. For example: select ml-100k/u.data file.
+- Then, Write "Table name"; for example: ratings.
+- Afterthat, give the name to "columns"; For example: userID, movieID, rating, epochseconds. You can also choose the data type of                    columns.
+- Finally, click on "Upload Table".
+- Another example for upload u.item file:
+  Click on settings icon for cutomizing File type. Change Field Delimiter: 124 | (because data is sperated with pipe | in u.item        file.
+- Choose File "u.item" from local machine ml-100k data folder
+- Give Table name: names
+- Change column name: movieID, title
+- Click on Upload Table.
+- Now write a query in query editiors.
 
 
 

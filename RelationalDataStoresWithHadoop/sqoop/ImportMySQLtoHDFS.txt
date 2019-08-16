@@ -1,0 +1,8 @@
+# Sqoop: Import data from MySQL to HDFS.
+
+sqoop import --connect jdbc:mysqk://localhost/dataset_name -- driver com.mysql.jdbc.Driver --table table_name
+
+For Example: Import movies from movielens data set:
+# used -m 1 for mapping one file.
+sqoop import --connect jdbc:mysql://localhost/movilens --driver com.mysql.jdbc.Driver --table movies -m 1
+

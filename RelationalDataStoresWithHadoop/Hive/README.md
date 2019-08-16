@@ -59,7 +59,63 @@ Hadoop cluster look like a realtional database.
 - Now write a query in query editiors.
 - You can copy paste the scripts from .txt file into query editor to see how hive works.
 
+## How Hive works ?
+- It uses "schema on read" and "schema on write" approach. schema on write means where you write the schema of your database
+  before load the data into it. Sometimes it enforced you to write data to disk.
+- It take unstructured data and just sort of applies a schema to it as it's being read instead. So data is still stored as tab-delimited text files or whatever it might be with no actual structure to it.
+- But Hive maintains a metastore, which is called as actual schema data that's associated with unstructured data.
 
-
+_i Schema on Read: i_
+* Basically, hive maintains a "metastore" that imparts a structure you define on the structured data that is stored on HDFS etc.
+* For Example:
+            
+            CREATE TABLE ratings (
+              userID INT,
+              movieID INT,
+              rating INT,
+              time INT)
+            ROW FORMAT DELIMTED
+            FIELDS TERMINATED BY '\t'
+            STORED AS TEXTFILE;
+            
+            LOAD DATA LOCAL INPATH '${env:HOME}/ml-100k/u.data'
+            OVERWRITE INTO TABLE ratings;
+            
+_i Where is the data? i_
+  * LOAD DATA
+    - MOVES data from a distributed filesystem into Hive.
+  * LOAD DATA LOCAL
+    - COPIES data from your local filesystem into Hive.
+  * Managed vs. External tables
+  
+        CREATE EXTERNAL TABLE IF NOT EXISTS ratings (
+            userID INT,
+            movieID INT,
+            rating INT,
+            time INT)
+        ROW FORMAT DELIMITED FIELDS TERMINATED BY '\T'
+        LOCATION '/data/ml-100k/u.data';
+            
+            
+_i Partitioning: i_
+ - you can store your data in partitioned subdirectories.
+ - Huge optimization if your queries are only on certain partitions.
+ 
+          CREATE TABLE customers (
+            name STRING,
+            address STRUCT<street:STRING, city:STRING, state:STRING, zip:INT>)
+          PARTITIONED BY (country STRING);
+          
+          #STRUCTURE FOR THIS WOULD BE LIKE THIS:
+              ..../customers/country=CA/
+              ..../customers/country=GB/
+              
+ _i Ways to use Hive: i_
+ - Interactive via hive> prompt/Command line interface(CLI).
+ - Saved query files: _ihive -f /somepath/queries.hqli_
+ - Through Ambari/Hue
+ - Through JDBC/ODBC server
+ - Through Thrift service, But remeber, Hive is not suitable fro OLTP.
+ - Via Oozie.
 
 

@@ -36,15 +36,20 @@ importing or exporting your data.
   
   In Hadoop virtual machine, follow the following steps:
   1. $ mysql -u root -p
+  
      pwd: hadoop
+     
+     > create database movielens;
   2. $ exit.
   3. $ wget http://media.sundog-soft.com/hadoop/movielens.sql .
   4. #import moviedata in MySQL:
   
      $ mysql -u root -p
+     
+     pwd: hadoop
   6. mysql>  SET NAMES 'utf8';
  
-     mysql>  SET CHARACTER SET utf8;
+          >  SET CHARACTER SET utf8;
      
           >  use movielens;
           
@@ -53,6 +58,8 @@ importing or exporting your data.
           >  show tables;
           
           >  select * from movies limit 10;
+          
+          >  describe ratings;
   
           >  SELECT movie.title, COUNT(ratings.movie_id) AS ratingCount 
           
@@ -75,7 +82,11 @@ importing or exporting your data.
         > GRANT ALL PRIVILEGES ON movilens.* to ''@'localhost';
   9. $ exit
   10.$ Sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver  --table movies -m 1
+  
+      ( Can see the ouput on ambari window in FileView: user>maria_dev>movies>part-m-00000 )
   11.$ Sqoop import --connect jdbc://mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1 --hive-import
+  
+      ( Can see the ouput in HiveView: default Database; there is movies table exist now)
   12.$ mysql -u root -p
   13. pwd:hadoop
   
@@ -84,7 +95,7 @@ importing or exporting your data.
       > CREATE TABLE exported_movies(id INTEGER, title VARCHAR(255), releaseData DATE);
       
   14. $ exit
-  15. $ sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export -dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
+  15. $ sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export-dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
   
   NOTE: For incremental imports:
   

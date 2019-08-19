@@ -40,11 +40,54 @@ importing or exporting your data.
   2. $ exit.
   3. $ wget http://media.sundog-soft.com/hadoop/movielens.sql .
   4. #import moviedata in MySQL:
-     $ mysql -u root -p
-  6. mysql> SET NAMES 'utf8';
-     mysql> SET CHARACTER SET utf8;
-          > use movielens;
-          > source movielens.sql;
-          > show tables;
-          > select * from movies limit 10;
   
+     $ mysql -u root -p
+  6. mysql>  SET NAMES 'utf8';
+ 
+     mysql>  SET CHARACTER SET utf8;
+     
+          >  use movielens;
+          
+          >  source movielens.sql;
+          
+          >  show tables;
+          
+          >  select * from movies limit 10;
+  
+          >  SELECT movie.title, COUNT(ratings.movie_id) AS ratingCount 
+          
+          >  FROM movies
+          
+          >  INNER JOIN ratings
+          
+          >  ON movies.id = ratings.movie_id
+          
+          >  GROUP BY movies.title
+          
+          >  ORDER BY ratingCount;
+          
+          >  exit
+          
+  7. #Use sqoop to import data from MySQL to HDFS/HIve
+  
+      $ mysql -u root -p 
+        pwd: hadoop
+        > GRANT ALL PRIVILEGES ON movilens.* to ''@'localhost';
+  9. $ exit
+  10.$ Sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver  --table movies -m 1
+  11.$ Sqoop import --connect jdbc://mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1 --hive-import
+  12.$ mysql -u root -p
+  13. pwd:hadoop
+  
+      > use movielens;
+      
+      > CREATE TABLE exported_movies(id INTEGER, title VARCHAR(255), releaseData DATE);
+      
+  14. $ exit
+  15. $ sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies --export -dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
+  
+  NOTE: For incremental imports:
+  
+      - keep realtional DB & Hadoop in sync.
+      
+      $ --check -column and --last -value

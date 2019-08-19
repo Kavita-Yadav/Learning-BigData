@@ -94,6 +94,7 @@ a database.
        
    1. Login to Hadoop virtual machine.
    2. Go to Settings->General->Network->Advanced->Port Forwarding Rules.
+   
         Name: HBaseREST, Protocol: TCP, Host_IP: 127.0.0.1, Host_Port: 8000, Guest_IP: - , Guest_Port: 8000
    3. Login to Ambari dashboard as admin user.
    4. Go to "HBase" service. Click on Service Actions-> Start->Confirm Start->OK.

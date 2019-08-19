@@ -66,7 +66,7 @@ a database.
 - Thrift sservice
 - Avro service
 
-## Practical Implementaion:
+## Practical Implementation:
    Creating a HBase table with Python via REST
     
    _iWhat are we doing?i_
@@ -102,3 +102,52 @@ a database.
    6. $ /usr/hdp/current/hbase-master/bin/hbase-daemon.sh start rest -p 8000 --infoport 8001
    7. $ pip install starbase
    8. $ Python HBase.py
+   10.$ /usr/hdp/current/hbase-master/bin/hbase -daemon.sh stop rest
+   
+  ## Starbase
+  - "from starbase import Connection" helps to create connections.
+  - Create connection instance:
+      c = connection(IP, Port).
+      eg: c = connection("127.0.0.1", "8000")
+  - Show tables:
+      c.tables('table_name')
+      eg: c.tables('ratings')
+  - Create table insrance:
+      t = c.table('table_name')
+      eg: ratings = c.table('ratings')
+  - Create new table:
+      t.create('column 1' , 'column 2', column 3')
+      eg: ratings.create('rating')
+  - Check if table exists:
+      t.exists('table_name')
+  - Show table columns:
+      t.columns('table_name')
+  - add columns to table:
+      t.add_columns('col_name 1', 'col_name 2')
+  - drop columns from table:
+      t.drop_columns('col_name 1', 'col_name 2')
+  - drop entire table schema:
+      t.drop('table_name')
+  - Packages:
+      starbase.client.connection.Connection
+      (cluster_version, cluster_status, drop_table, tables, table_exists, version)
+      
+      starbase.client.table.Table
+      (add_columns, batch, create, drop, drop_columns, exists, insert, fetch, fetch_all_rows, regions, remove, schema, upadte)
+      
+      starbase.client.table.Batch
+      (commit, insert, upadte)
+      
+      starbase.client.transport.HttpRequest
+      eg: connection.version
+      
+      Failed requests:
+      retries(int), retry_delay(int)
+      eg: c = connection(
+              retries = 3 #Retry 3 times
+              retry_delay = 5 # wait for 5 seconds b/w retries)
+              
+       Note: no. of retries can acuse performance issues in your application.
+       
+  ## Use HBase with Pig to Import data at scale:
+      

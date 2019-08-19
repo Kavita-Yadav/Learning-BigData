@@ -1,4 +1,4 @@
-                                                                                                       Modified  
+# Import movie ratings into HBase                                                                                                      Modified  
 
 from starbase import Connection
 

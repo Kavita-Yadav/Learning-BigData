@@ -62,16 +62,27 @@
  #### Installing Cassandra:
  
  1. Login to sandboox using maria_dev.
+ 
  2. $ su root 
+ 
  3. Check python installed or not. $ python -V.
+ 
  4. $ yum update.
+ 
  5. $ yum install scl-utils.
+ 
  7. $ yum install centos-release-scl-rh.
+ 
  8. $ yum install python27
+ 
  9. $ scl enable python27 bash
+ 
  10. Check python version again now. $ python -V
+ 
  11.$ cd /etc/yum.repos.d
+ 
  12.$ ls
+ 
  13.$ nano datastax.repo
       edit: 
             [datastax]
@@ -79,27 +90,48 @@
             baseurl = http://rpm.datastax.com/community
             enabled = 1
             gpgcheck = 0
+            
  14.$ cat datastax.repo
+ 
  15.$ yum install dsc30
+ 
  16.$ pip install cqlsh
+ 
  17.$ service cassandra start
+ 
  18.$ cqlsh --cqlversion="3.4.0"
+ 
  19.> CREATE KEYSPACE movielens WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'} 
       AND durable_writes = true;
+      
  20.$ USE movielens;
+ 
  21.> CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text, PRIMARY KEY (user_id));
+ 
  22.> DESCRIBE TABLE users;
+ 
  23.> SELECT * FROM users;
+ 
  24.$ exit
+ 
  25.$ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/Cassandra/CassandraWithSpark.py .
+ 
  26. export SPARK_MAJOR_VERSION=2
+ 
  27. Go to Ambari. user>maria_dev>ml-100k-> u.user
+ 
  28. spark-submit --packages datastax:spark-cassandra-connector:2.0.0-M2-s_2.11 CassandraWithSpark.py
+ 
  29. cqlsh --cqlversion="3.4.0"
+ 
  30. > USE movielens;
+ 
  31. > SELECT * FROM users LIMIT 10;
+ 
  32. $ exit
+ 
  33. $ service cassandra stop
+ 
  34. $ exit
 
 

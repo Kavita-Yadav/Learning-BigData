@@ -150,4 +150,32 @@ a database.
        Note: no. of retries can acuse performance issues in your application.
        
   ## Use HBase with Pig to Import data at scale:
-      
+      1. First need to integrate pig with HBase.
+      2. Create HBase tbale ahead of time.
+      3. Your realtion must have a unique key at its first column,followed by subsequent columns as you want them saved in HBase.
+      4. USING clause allows you to STORE into HBase table.
+      5. Can work at scale-HBase is transactional on rows.
+      6. Go to ambari->FileView -> user-> maria_dev-> ml-100k.
+      7. upload "u.user" data file.
+      8. Login to hadoop sandbox.
+      9. $ su root
+      10.$ hbase shell
+         > list
+         > create 'users', 'userinfo'
+         > exit
+      11.$ wget http://media.sundog-soft.com/hadoop/hbase.pig .
+      12.$ less hbase.pig
+      13.$ pig hbase.pig
+      14.$ hbase shell
+         > list
+         > scan users
+         > disable 'users'
+         > drop 'users'
+         > list
+         > exit
+      15.$ exit
+      16. Shutdown HBase service:
+          Go to Ambari.
+          Click 'services'
+          Click 'HBase'
+          Click 'Service Actions' -> Stop.

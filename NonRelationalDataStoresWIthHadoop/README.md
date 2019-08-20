@@ -49,4 +49,19 @@ Sample application architecture:
                           |     Hadoop    |
                           |   YARN/HDFS   |
                            _______________
+                           
+#### Choosing your Database:
+- When you don't even need some external database. Following factor can help to make decision for this case:
+- Integration considerations.
+- Scaling requirements.
+- Support considerations.
+- Budget considerations.
+- CAP(Consitency, Availability, Partition-Tolerance) consideration. 
+- Simplicity.
+- Example: 
+           building an internal phone directory app
+              - Scale: limited
+              - Consistency: Eventual is fine
+              - Availability requirements: not mission critical
+              - MySQL is probably already installed on your web server...
   

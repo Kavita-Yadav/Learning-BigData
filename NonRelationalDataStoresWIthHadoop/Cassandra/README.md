@@ -58,3 +58,38 @@
        - Use cases:
             - Use Spark for analytics on data stored in Cassandra.
             - Use Spark to transform data and store it into Cassandra for transactional use.
+            
+ #### Installing Cassandra:
+ 1. Login to sandboox using maria_dev.
+ 2. $ su root 
+ 3. Check python installed or not. $ python -V.
+ 4. $ yum update.
+ 5. $ yum install scl-utils.
+ 7. $ yum install centos-release-scl-rh.
+ 8. $ yum install python27
+ 9. $ scl enable python27 bash
+ 10. Check python version again now. $ python -V
+ 11.$ cd /etc/yum.repos.d
+ 12.$ ls
+ 13.$ nano datastax.repo
+      edit: 
+            [datastax]
+            name = DataStax Repo for Apache Cassandra
+            baseurl = http://rpm.datastax.com/community
+            enabled = 1
+            gpgcheck = 0
+ 14.$ cat datastax.repo
+ 15.$ yum install dsc30
+ 16.$ pip install cqlsh
+ 17.$ service cassandra start
+ 18.$ cqlsh --cqlversion="3.4.0"
+ 19.> CREATE KEYSPACE movielens WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'} 
+      AND durable_writes = true;
+ 20.$ USE movielens;
+ 21.> CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text, PRIMARY KEY (user_id));
+ 22.> DESCRIBE TABLE users;
+ 23.> SELECT * FROM users;
+ 24.$ exit
+ 25.$ wget 
+
+

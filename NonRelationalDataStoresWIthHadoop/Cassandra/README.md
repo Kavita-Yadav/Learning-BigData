@@ -60,6 +60,7 @@
             - Use Spark to transform data and store it into Cassandra for transactional use.
             
  #### Installing Cassandra:
+ 
  1. Login to sandboox using maria_dev.
  2. $ su root 
  3. Check python installed or not. $ python -V.
@@ -90,6 +91,15 @@
  22.> DESCRIBE TABLE users;
  23.> SELECT * FROM users;
  24.$ exit
- 25.$ wget 
+ 25.$ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/Cassandra/CassandraWithSpark.py .
+ 26. export SPARK_MAJOR_VERSION=2
+ 27. Go to Ambari. user>maria_dev>ml-100k-> u.user
+ 28. spark-submit --packages datastax:spark-cassandra-connector:2.0.0-M2-s_2.11 CassandraWithSpark.py
+ 29. cqlsh --cqlversion="3.4.0"
+ 30. > USE movielens;
+ 31. > SELECT * FROM users LIMIT 10;
+ 32. $ exit
+ 33. $ service cassandra stop
+ 34. $ exit
 
 

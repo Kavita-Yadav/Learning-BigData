@@ -29,9 +29,23 @@
   
       CREATE DATABASE movielens;
 - Execute
-- Click on Upload Table-> FileType: 9 TAB(horizontal tab) -> Choose File: u.data-> Stored as: ORC -> Table name: ratings.
+- Click on Upload Table-> FileType: 9 TAB(horizontal tab) -> Choose File: u.data-> Database: movielens-> Stored as: ORC -> Table name: ratings.
 - Change Column Name: Column1: user_id, Column2: movie_id, Column3: rating, Column4: epoch
 - Click on Upload Table button.
 - Go to Query Editor.
     
         SELECT * FROM ratings LIMIT 100;
+- Login to hadoop virtual sandbox using maria_dev.
+- $ su root
+- $ ls
+- $ export SPARK_MAJOR_VERSION=2
+- $ spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 MongoDBWithSpark.py
+- $ wget http://archive.apache.org/dist/drill/drill-1.12.0/apache-drill-1.12.0.tar.gz
+- $ ls
+- $ tar -xvf apache-drill-1.12.0.tar.gz
+- $ ls
+- $ cd apache-drill-1.12.0
+- $ ls
+- $ bin/drillbit.sh start -Ddrill.exec.port=8765
+- Open in broswer http://127.0.0.1:8765 .
+

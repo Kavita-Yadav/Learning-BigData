@@ -58,11 +58,17 @@ Distributing queries across different data stores.
 19.bin/launcher start
 20.Go to UI 127.0.0.1:8090
 21.bin/presto --server 127.0.0.1:8090 --catalog hive
+
   > show tables from default;
+  
   > select * from default.ratings limit 10;
+  
   > select * from default.ratings where rating = 5 limit 10;
+  
   > select count(*) from default.ratings where rating=1;
+  
   > quit
+  
 22.bin/launcher stop\
 
 #### query cassandra and hive using presto

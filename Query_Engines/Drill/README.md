@@ -48,4 +48,8 @@
 - $ ls
 - $ bin/drillbit.sh start -Ddrill.exec.port=8765
 - Open in broswer http://127.0.0.1:8765 .
+- Click on 'hive' - 'update' button and change the configuration to "hive.metastore.uris": "thrift://localhost:9083" .
+- Click update.
+- Click Mongo-update and change to "connection": "mongodb://localhost:27017/" .
+
 

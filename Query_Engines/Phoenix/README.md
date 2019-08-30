@@ -95,7 +95,7 @@
  $ wget http://media.sundog-soft.com/hadoop/ml-100k/u.user
  $ cd ..
  $ pwd
- $ wget http://media.sundog-soft.com/hadoop/phoenix.pig
+ $ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Query_Engines/Phoenix/Phoenix.pig
  $ pig phoenix.pig
  $ cd /usr/hdp/current/phoenix-xlient/bin
  $ python sqlline.py

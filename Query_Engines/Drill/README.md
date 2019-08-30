@@ -51,5 +51,23 @@
 - Click on 'hive' - 'update' button and change the configuration to "hive.metastore.uris": "thrift://localhost:9083" .
 - Click update.
 - Click Mongo-update and change to "connection": "mongodb://localhost:27017/" .
+- Click on Query. Select SQL. Write query in editor and submit.
 
-
+         To see database:
+            SHOW DATABASES;
+            
+         Run query for hive.movielens data:
+            SELECT * FROM hive.movielens.ratings LIMIT 10;
+        
+         Run query for mongo.movielens data:
+            SELECT * FROM mongo.movielens.users LIMIT 10;
+         
+         Run Join:
+            SELECT u.occupation, COUNT(*) FROM hive.movielens.ratings r JOIN mongo.movielens.users u ON r.user_id = u.user_id
+            GROUP BY u.occupation;
+            
+  - Go back to hadoop virtual machine.
+  - $ pwd
+  - $ bin/drillbit.sh stop
+  - Stop mongodb service from Ambari UI browser.
+            

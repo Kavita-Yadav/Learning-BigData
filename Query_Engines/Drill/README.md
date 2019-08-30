@@ -39,7 +39,7 @@
 - $ su root
 - $ ls
 - $ export SPARK_MAJOR_VERSION=2
-- $ spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 MongoDBWithSpark.py
+- $ spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 MongoDBandDrill.py
 - $ wget http://archive.apache.org/dist/drill/drill-1.12.0/apache-drill-1.12.0.tar.gz
 - $ ls
 - $ tar -xvf apache-drill-1.12.0.tar.gz

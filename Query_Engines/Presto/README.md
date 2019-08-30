@@ -43,45 +43,45 @@ Distributing queries across different data stores.
 
 #### Install Presto, and qyery Hive with it
 
-1. Login to hadoop virtual machine.
+1.  Login to hadoop virtual machine.
 
-2. su root
+2.  su root
 
-3. pwd
+3.  pwd
 
-4. wget https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.165/presto-server-0.165.tar.gz
+4.  wget https://repo1.maven.org/maven2/com/facebook/presto/presto-server/0.165/presto-server-0.165.tar.gz
 
-5. tar -xvf presto-server-0.165.tar.gz
+5.  tar -xvf presto-server-0.165.tar.gz
 
-6. ls
+6.  ls
 
-7. cd presto-server-0.165
+7.  cd presto-server-0.165
 
-8. ls
+8.  ls
 
-9. pwd
+9.  pwd
 
-10.wget http://media.sundog-soft.com/hadoop/presto-hdp-config.tgz
+10. wget http://media.sundog-soft.com/hadoop/presto-hdp-config.tgz
 
-12.tar -xvf presto-hdp-config.tgz
+12. tar -xvf presto-hdp-config.tgz
 
-13.ls
+13. ls
 
-14.cd bin
+14. cd bin
 
-15.wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.165/presto-cli-0.165-executable.jar
+15. wget https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/0.165/presto-cli-0.165-executable.jar
 
-16.mv presto-cli-0.165-executable.jar presto
+16. mv presto-cli-0.165-executable.jar presto
 
 17. chmod +x presto
 
-18.cd ..
+18. cd ..
 
-19.bin/launcher start
+19. bin/launcher start
 
-20.Go to UI 127.0.0.1:8090
+20. Go to UI 127.0.0.1:8090
 
-21.bin/presto --server 127.0.0.1:8090 --catalog hive
+21. bin/presto --server 127.0.0.1:8090 --catalog hive
 
   > show tables from default;
   
@@ -93,7 +93,7 @@ Distributing queries across different data stores.
   
   > quit
   
-22.bin/launcher stop\
+22. bin/launcher stop\
 
 #### query cassandra and hive using presto
 

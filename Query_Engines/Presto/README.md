@@ -72,11 +72,17 @@ Distributing queries across different data stores.
 - service cassandra start
 - nodetool enablethrift 
 - cqlsh --cqlversion="3.4.0"
+
  > describe keyspaces;
+ 
  > use movielens;
+ 
  > describe tables;
+ 
  > select * from users limit 10;
+ 
  > quit
+ 
  - cd etc/catlog
  - nano cassandra.properties
       connector.name = cassandra
@@ -84,12 +90,18 @@ Distributing queries across different data stores.
  - cd ../..
  - bin/launcher start
  - bin/presto --server 127.0.0.1:8090 --catalog hive,cassandra
+ 
   > show tables from cassandra.movielens;
+  
   > describe cassandra.movielens.users;
+  
   > select * from hive.default.ratings limit 10;
+  
   > select u.occupation, count(*) from hive.default.ratings r join 
     cassandra.movielens.users u on r.user_id = u.user_id group by u.occupation;
+    
   > quit
+  
   - bin/launcher stop
   - service cassandra stop
   

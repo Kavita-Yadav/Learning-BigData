@@ -60,11 +60,17 @@
  
  #### Install Phoenix:
  1. Start HBase service in Ambari UI.
+ 
  2. yum install phoenix.
+ 
  3. cd /usr/hdp/current/phoenix-client/
+ 
  4. ls
+ 
  5. cd bin
+ 
  6. python sqlline.py
+ 
  7. Run query in terminal jdbc:phoenix:> 
   
               CREATE TABLE IF NOT EXISTS us_population(
@@ -72,37 +78,67 @@
               city VARCHAR NOT NULL,
               population BIGINT
               CONSTRAINT my_pk PRIMARY KEY (state, city));
+              
   > !tables.
+  
   > UPSERT INTO US_POPULATION VALUES ('NY', 'New York', 8143197);
+  
   > UPSERT INTO US_POPULATION VALUES ('CA', 'Los Angeles', 3844829);
+  
   > SELECT * FROM US_POPULATION;
+  
   > SELECT * FROM US_POPULATION WHERE STATE = 'CA';
+  
   > DROP TABLE US_POPULATION;
+  
   > !tables
+  
   > !quit
   
+  
  #### Integrate Phoenix with Pig
+ 
  $ pwd
+ 
  $ python sqlline.py
+ 
  > CREATE TABLE users (USERID INTEGER NOT NULL, AGE INTEGER, GENDER CHAR(1), OCCUPATION VARCHAR, ZIP VARCHAR CONSTRAINTT pk
   PRIMARY KEY(USERID));
+  
  > !tables
+ 
  > !quit
+ 
  $ cd /home/maria_dev
+ 
  $ ls
+ 
  $ mkdir ml-100k
+ 
  $ cd ml-100k/ 
+ 
  $ wget http://media.sundog-soft.com/hadoop/ml-100k/u.user
+ 
  $ cd ..
+ 
  $ pwd
+ 
  $ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Query_Engines/Phoenix/Phoenix.pig
+ 
  $ pig phoenix.pig
+ 
  $ cd /usr/hdp/current/phoenix-xlient/bin
+ 
  $ python sqlline.py
+ 
  > !tables
+ 
  > SELECT * FROM USRES LIMIT 10;
+ 
  > DROP TABLE users;
+ 
  > !tables
+ 
  > Stop HBase service from Ambari UI.
  
  

@@ -32,4 +32,35 @@
 
                      * Pig/Hive - MR *                                          * Pig/Hive - Tez *
     
-   Notice that Tez don't use HDFS and skipped mapper tasks which we need to use in MR.
+   Notice that Tez don't use HDFS. Instead of dividing into different mapper reducer stages, It makes one sequence
+   of dependencies and run it all together. That is why, It is lot faster.
+
+#### Use Hive on Tez and measure the performance benefit:
+
+- Login to Ambari
+- Go to Hive View
+- Upload Table-> choose CSV Field Delimiter: 124| -> Choose File(u.item) - > Table name: names
+- Change column name : movie_id, name, release_date 
+- Click on Upload Table now.
+- Go to Query Editor. And write queries:
+
+            DROP VIEW IF EXISTS topMovieIDs;
+            
+            CREATE VIEW topMovieIDs AS
+            SELECT movie_id, coun(movie_id) as ratingCount
+            FROM movielens.ratings
+            GROUP BY movie_id
+            ORDER BY ratingcount DESC;
+            
+            SELECT n.name, ratingCount
+            FROM topMovieIDs t JOIN movielens.names n ON t.movie_id = n.movie_id;
+            
+ - Click on settings icon on right. Click on Add -> select 'hive.execution.engine' -> select value as 'tez'
+ - Click on SQL and click on execute button to submit the query.
+ - Click on settings icon on right. Click on Add -> select 'hive.execution.engine' -> select value as 'mr'
+ - Click on SQL and click on execute button to submit the query.
+ - Notice the time consume by both and analyze that which one is better by noticing there performance.
+ - Click on Tez View.
+ - Click on Dag Name of recent query run by you and see the details.
+ - Click on DAG counters to see the counters name and value.
+ - Click on Graphical View to see the DAG Graph.

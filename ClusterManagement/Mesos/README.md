@@ -2,7 +2,7 @@
 #### MESOS ####
 ###############
 
-- Yes, yet anotherr resource negotiator.
+- Yes, yet another resource negotiator.
 
 #### What is Mesos ?
 
@@ -17,10 +17,10 @@
 #### Difference between Mesos and YARN:
 
 - YARN is monolithic scheduler - you give it a job, and YARN figures out where to run.
-- Mesos is a two-tired system.
-    * Mesos just makes offers of resources to your application ("framework")
-    * your framework decides whether to accept or reject them
-    * You also decide your own scheduling algorithm
+- Mesos is a two-tired system
+    * Mesos just makes offers of resources to your application ("framework").
+    * your framework decides whether to accept or reject them.
+    * You also decide your own scheduling algorithm.
 - YARN is optimized for long, analytical jobs like you see in Hadoop.
 - Mesos is built to handle that, as well as long-lived processes(servers) and short-lived process as well.
 
@@ -28,10 +28,10 @@
 
 - If you're looking for an architecture you can code all of your organization's cluster applications against - not just
   Hadoop stuff - Mesos can be really useful.
-    * You should also look at Kuberentes / Docker
+    * You should also look at Kuberentes / Docker.
 - If all you are about is Spark and Storm from the Hadoop-y world, Mesos is an option
-    * But YARN's probably better, especially if your data is on HDFS
-    * Spark on Mesos is limited to on executor per slave (node)
+    * But YARN's probably better, especially if your data is on HDFS.
+    * Spark on Mesos is limited to on executor per slave (node).
     
     
  #### Siloed vs resource sharing:
@@ -90,6 +90,6 @@
  #### When to use Mesos ?
  
  - If your organization as a whole has chosen to use Mesos to manage its computing resources in general
-    * Then you can avoid partitioning off a Hadoop cluster by using Myriad
+    * Then you can avoid partitioning off a Hadoop cluster by using Myriad.
     * There is also a "Hadoop on Mesos" package for Cloudera that bypasses YARN entirely.
  - Otherwise - probably not. I just want you know what Mesos is and how it's different from YARN.

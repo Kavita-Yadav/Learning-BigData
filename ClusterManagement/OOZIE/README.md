@@ -116,5 +116,38 @@
 #### Set up a simple workflow in Oozie:
 - We'll get movilens back into MySQL if it's not still there.
 - Write a Hive script to find all movies released before 1940.
--Set up an Oozie workflow that uses sqoop to extract movie information from MySQL, then analyze it with Hive.
-      
+- Set up an Oozie workflow that uses sqoop to extract movie information from MySQL, then analyze it with Hive.
+- Login to sanbox as maria_dev
+- mysql -u root -p
+- pwd: hadoop
+- show databases;
+- quit
+- wget http://media.sundog-soft.com/hadoop/movielens.sql 
+- mysql -u root -p
+- set names 'utf8';
+- set character set utf8;
+- create database movielens;
+- use movielens;
+- source movielens.sql;
+- show tables;
+- select * from limit 10;
+- grant all privileges on movielens.* to ''@'localhost';
+- quit
+- wget http://media.sundog-soft.com/hadoop/oldmovies.sql
+- wget http://media.sundog-soft.com/hadoop/workflow.xml
+- wget http://media.sundog-soft.com/hadoop/job.properties
+- hadoop fs -put workflow.xml /user/maria_dev
+- hadoop fs -put oldmovies.sql /user/maria_dev
+- hadoop fs -put /usr/java/mysql-connector-java.jar /user/oozie/share/lib/lib_20161025075203/sqoop
+- Login to ambari as admin.
+- Go to File View-> user-> share -> lib (Check lib file is there now).
+- Start Oozie Service.
+- Go back to terminal.
+- oozie job -oozie http://localhost:11000/oozie -config /hadoop/maria_dev/job.properties -run
+- Go to Oozie browser UI 127.0.0.1:11000/oozie/
+- You can check all details in UI.
+- Go to Ambari File views -> user-> maria_dev -> oldmovies-> 00000_0
+
+
+
+

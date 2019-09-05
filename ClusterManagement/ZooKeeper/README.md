@@ -84,7 +84,27 @@
                                                                             |  |     Server    |  |
                                                                             |   _______________   |
                                                                             |_____________________|
+Note: If ZooKeeper goes down, we can use another ZooKeeper server. So there is ZooKeeper ensemble which has number of ZooKeeper server present in it. It is more of work like a monogoDB.
+                         
+#### Simulating a falling master with ZooKeeper:
+- Login to terminal as maria_dev.
+- su root
+- cd /usr/hdp/current/zookeeper-cient/
+- cd bin
+- cd ./zkCli.sh
+- [zk:localhost:2181 (CONNECTED) 0] ls /
+- [zk:localhost:2181 (CONNECTED) 1] create -e /testmaster "127.0.0.1:2223"
+- [zk:localhost:2181 (CONNECTED) 2] get /testmaster
+- [zk:localhost:2181 (CONNECTED) 3] quit
+- ./zkCli.sh
+- [zk:localhost:2181 (CONNECTED) 0] ls /
+- [zk:localhost:2181 (CONNECTED) 1] get /testmaster
+- [zk:localhost:2181 (CONNECTED) 2] create -e /testmaster "127.0.0.1:2225"
+- [zk:localhost:2181 (CONNECTED) 3] get /testmaster
+- [zk:localhost:2181 (CONNECTED) 4] create -e /testmaster "127.0.0.1:2225"
+- [zk:localhost:2181 (CONNECTED) 3] quit
+- exit
+- 
 
-                         
-                         
+
                          

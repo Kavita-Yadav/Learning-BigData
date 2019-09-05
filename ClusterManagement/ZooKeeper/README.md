@@ -105,7 +105,7 @@ Note: If ZooKeeper goes down, we can use another ZooKeeper server. So there is Z
 - [zk:localhost:2181 (CONNECTED) 4] create -e /testmaster "127.0.0.1:2225"
 - [zk:localhost:2181 (CONNECTED) 3] quit
 - exit
-- 
+- exit
 
 
                          

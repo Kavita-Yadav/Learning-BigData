@@ -30,6 +30,6 @@
                          \       /                                                      \     /
                           Reduce                                                        Reduce
 
-                  #### Pig/Hive - MR                                            #### Pig/Hive - Tez
+                     * Pig/Hive - MR *                                          * Pig/Hive - Tez *
     
    Notice that Tez don't use HDFS and skipped mapper tasks which we need to use in MR.

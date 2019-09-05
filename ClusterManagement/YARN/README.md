@@ -79,6 +79,7 @@
 #### Building new YARN applications:
 
 - Why? There are so many existing projects you can just use
+
       * Need a DAG*- based application? Build it on Spark or Tez
          - (*Directed Acyclic Graph)
 - But if you really need to

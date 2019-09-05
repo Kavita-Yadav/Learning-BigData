@@ -42,6 +42,7 @@
     * Replace the concept of "file" with "znode" and you've pretty much got it.
  - Here's the ZooKeeper API:
     * Create, delete, exists, setData, getData, getChildren
+    
                   /
                   |
                   |------ /master   "master1.foobar.com:2223"

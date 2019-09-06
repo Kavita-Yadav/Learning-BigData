@@ -55,9 +55,9 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
 
 - %sh
 
-  wget http://media.sundig-soft.com/hadoop/ml-100k/u.data -0 /tmp/u.data
+  wget http://media.sundig-soft.com/hadoop/ml-100k/u.data -O /tmp/u.data
   
-  wget http://media.sundog-soft.com/hadoop/ml-100k/u.item -0 /tmp/u.item
+  wget http://media.sundog-soft.com/hadoop/ml-100k/u.item -O /tmp/u.item
   
   echo "Downloaded!"
   
@@ -75,7 +75,7 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
   
 - final case class Rating(movieID: Int, rating:Int)
   
-  val lines = sc.textFile("hdfs:///tmp/ml-100k/u.data").map(x=> {val fields = x.split("\t); Rating(fields(1).toInt, fields(2).toInt)})
+  val lines = sc.textFile("hdfs:///tmp/ml-100k/u.data").map(x=> {val fields = x.split("\t"); Rating(fields(1).toInt, fields(2).toInt)})
   
 - import sqlContext.implicits._
   

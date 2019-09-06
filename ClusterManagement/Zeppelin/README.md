@@ -111,11 +111,11 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
 
 - %sql
 
-  SELECT t.title, count(*) cnt FROM ratings r JOIN titles t ON r.movieID = t.movieID GROUP BY t.title ORDER BY cnt DSC LIMIT 20
+  SELECT t.title, count(*) cnt FROM ratings r JOIN titles t ON r.movieID = t.movieID GROUP BY t.title ORDER BY cnt DESC LIMIT 20
   
 - %sql
 
-  SELECT t.title, count(*) cnt FROM ratings r JOIN titles t ON r.movieID = t.movieID GROUP BY t.title ORDER BY cnt DSC
+  SELECT t.title, count(*) cnt FROM ratings r JOIN titles t ON r.movieID = t.movieID GROUP BY t.title ORDER BY cnt DESC
   
 - Now go to new tab-> http://media.sundog-soft.com/hadoop/MovieLens.json
 

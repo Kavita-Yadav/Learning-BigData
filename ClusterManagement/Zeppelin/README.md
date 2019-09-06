@@ -125,4 +125,4 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
 
 - Check created "MovieLens analysis with Spark".
   
-  
+Note: Check in Ambari /tmp/ml-100k/u.data file. Data file should have correctly downloaded or not. If not then it will be showing blank table without any data. In that case, you can upload data file using ambari broswer manually in /tmp/ml-100k folder from your local machine.  

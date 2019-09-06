@@ -2,7 +2,7 @@
 #### KAFKA ####
 ###############
 
-Publish/subscribe Messaging wirh Kafka.
+Publish/subscribe Messaging with Kafka.
 
 #### What is streaming ?
 - SO far we've really just talked about processing historical, existing big data

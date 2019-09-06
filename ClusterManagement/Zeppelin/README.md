@@ -62,6 +62,7 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
   echo "Downloaded!"
   
 - Copy data to HDFS
+
   %sh
   
   hadoop fs -rm -r -f /tmp/ml-100k

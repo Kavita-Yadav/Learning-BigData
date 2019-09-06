@@ -59,11 +59,15 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
   hadoop fs -put /tmp/u.data /tmp/ml-100k/
   hadoop fs -put /tmp/u.utem /tmp/ml-100k/
 - final case class Rating(movieID: Int, rating:Int)
+  
   val lines = sc.textFile("hdfs:///tmp/ml-100k/u.data").map(x=> {val fields = x.split("\t); Rating(fields(1).toInt, fields(2).toInt)})
 - import sqlContext.implicits._
+  
   val ratingsDF = lines.toDF()
+  
   ratingsDF.printSchema()
 - val topMovieIDs = ratingsDF.groupBy("movieID").count().orderBy(desc("count")).cache()
+  
   topMovieIDs.show()
 - ratingsDF.registerTempTable("ratings")
 - %sql
@@ -72,8 +76,11 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
   SELECT rating, COUNT(*) as count FROM ratings GROUP BY rating
 - final case class Movie(movieID: Int, title: String)
   val lines = sc.textFile("hdfs:///tmp/ml-100k/u.item").map(x => {val fields = x.split('|'); Movie(fields(0).toInt, fields(1))})
+  
   import sqlContext.implicits._
+  
   val moviesDF = lines.toDF()
+  
   moviesDF.show()
 - moviesDF.registerTempTable("titles")
 - %sql

@@ -71,7 +71,7 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
   
   hadoop fs -put /tmp/u.data /tmp/ml-100k/
   
-  hadoop fs -put /tmp/u.utem /tmp/ml-100k/
+  hadoop fs -put /tmp/u.item /tmp/ml-100k/
   
 - final case class Rating(movieID: Int, rating:Int)
   

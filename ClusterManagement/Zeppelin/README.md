@@ -45,8 +45,8 @@ Note: Zeppelin comes pre-installed on Hortonworks Data Platform.
 - Open Zeppelin UI browser 127.0.0.1:9995 .
 - Create a new notebook "playing with data"
 - %md
-  ### Let's make sure Spark is working first!
-  Let's see what version we're working first!
+        ### Let's make sure Spark is working first!
+        Let's see what version we're working first!
 - sc.version
 - %sh
   wget http://media.sundig-soft.com/hadoop/ml-100k/u.data -0 /tmp/u.data

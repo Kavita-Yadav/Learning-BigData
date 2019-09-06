@@ -35,7 +35,7 @@ Publish/subscribe Messaging wirh Kafka.
                                            \         |          /
                                            \|/      \|/       \|/
                                            _______________________
-           *Connectors*        DB ------> |    Kafka Cluster      |<-----------> App      *Stream Processors*
+           *Connectors*   DB -----------> |    Kafka Cluster      |<-----------> App      *Stream Processors*
                             ,------------- _______________________
                            |                    /    |    \
                           \|/                  /     |      \                    
@@ -43,6 +43,49 @@ Publish/subscribe Messaging wirh Kafka.
                                              App    App     App
                           
                                                   *Consumers*
-                          
-                          
+ 
+ #### Setting up Kafka, and publishing some data
+ - Login to Ambari as admin.
+ - Start Kafka service.
+ - Login to terminal as maria_dev.
+ - cd /usr/hdp/current/kafka-broker/
+ - cd bin
+ - ./kafka-topics.sh --create --zookeeper sandbox.hortonworks.com:2181 --replication-factor 1 --partitions 1 --topic fred
+ - ./kafka-topics.sh --list --zookeeper sandbox.hortonworks.com:2181
+ - ./kafka-console-producer.sh --broker-list sandbox.hortonworks.com:6667 --topic fred
+ - now open one more terminal and login as maria_dev.
+ - cd /usr/hdp/current/kafka-broker/bin
+ - ./kafka-console-consumer.sh --bootstrap-server sandbox.hortonworks.com:6667 --zookeeper localhost:2181 --topic fred --        from-beginning
+ - Now try to type on one terminal and another terminal will automatically get the same message
+ - Ctrl + C to cancel it.
+ 
+ #### Publishing Web Logs with Kafka
+ - cd conf
+ - cp connect-standalone.properties ~/
+ - cp connect-file-sink.properties ~/
+ - cp connect-file-source.properties ~/
+ - cd ~
+ - vi connect-standalone.properties
+    bootstrap.servers=sandbox.hortonworks.com:6667
+ - vi connect-file-sink.properties
+    file=/home/maria_dev/logout.txt
+    topic=log-test
+ - vi connect-file-source.properties
+    file=/home/maria_dev/access_log_small.txt
+    topic=log-test
+ - wget http://media.sundog-soft.com/hadoop/access_log_small.txt
+ - In another connected terminal; ./kafka-console-consumer.sh --bootstrap-server sandbox.hortonworks.com:6667 --topic log-      test --zookeeper localhost:2181
+ - Again in first terminal; cd /usr/hdp/current/kafka-broker/bin
+ - ./connect-standalone.sh ~/connect-standalone.properties ~/connect-file-source.properties ~/connect-file-sink.properties
+ - Open one more terminal as maria_dev.
+ - cd ~
+ - less logout.txt
+ - echo "This is a new line" >> access_log_small.txt
+ - Check now another terminals it will generate this line on another two terminal as well.
+ - exit from all 3 terminal.
+ - Stop Kafka service at Ambari.
+    
+ 
+ 
+ 
                           

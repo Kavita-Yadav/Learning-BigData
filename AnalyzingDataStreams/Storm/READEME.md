@@ -41,4 +41,15 @@ Real-time stream processing
                          
                                          Supervisor 
                                       
-                                      
+#### Developing Storm applications
+
+- Usually done with Java
+     - Although bolts may be directed through scripts in other languages
+- Storm Core
+     - The loer-level API for Storm
+     - "At-least-once" semantics
+- Trident
+     - Higher-levle API for Storm
+     - "Exactly-level API for Storm
+- Storm runs your applications "forever" once submitted- until you explicitly stop them
+

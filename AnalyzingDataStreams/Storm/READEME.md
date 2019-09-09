@@ -28,3 +28,17 @@ Real-time stream processing
       Spout-----'
         |        
         '--------->   Bolt
+
+#### Storm Architecture
+                                                                 
+                                         Supervisor  
+                                      
+                         Zookeeper       Supervisor 
+                         
+         Nimbus          Zookeeper       Supervisor 
+         
+                         Zookeeper       Supervisor 
+                         
+                                         Supervisor 
+                                      
+                                      

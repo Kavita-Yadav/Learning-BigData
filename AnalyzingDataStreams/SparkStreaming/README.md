@@ -78,11 +78,13 @@ Process continous stream of data in near real-time
         - reduceByKey
         
 - _Stateful data_
+
         - You can also maintain a long-lived state on a Dstream
         - For example - running totals, broken down by keys
         - Another example: aggregating session data in web activity
         
 - #### Windowed Transformations
+
         - Allow you to compute results across a loner time perios than your batch interval
         - Example: want to see top-sellers from the past hour by looking at activity data that's coming from your e-commerce 
           web-site from bunch of different sever.
@@ -91,15 +93,16 @@ Process continous stream of data in near real-time
         - The window "slides" as time goes on, to represent batches within the window interval
         
   _Batch interval vs Slide interval vs Window interval_
-    - The batch interval is how often data is captured into a DStream
-    - The slide interval is how often a windowed transformation is computed
-    - The window interval is how far back in time the windowed transformation goes
+  
+      - The batch interval is how often data is captured into a DStream
+      - The slide interval is how often a windowed transformation is computed
+      - The window interval is how far back in time the windowed transformation goes
     
   _Example:_
     - Each batch contains one second of data(the batch interval)
     - We set up a window interal of 3 seconds and a slide interval of 2 seconds.
     
-        Time ----------------------------------------------->
+          Time ----------------------------------------------->
         
           Batch     Batch     Batch     Batch     Batch     Batch
             \       /   \       |       /   \         |       /
@@ -108,10 +111,12 @@ Process continous stream of data in near real-time
               result            result               result
               
  _Windowed transformations: code_
-    - The batch interval is set up with your SparkContext:
-          scc = StreamingContext(sc, 1)
-    - You can use reduceByWindow() or reduceByKeyAndWindow() to aggregate data across a longer period of time!
-          hashtagCounts = hashtagKeyValues.reduceByKeyAndWindow(lambda x, y:x + y, lambda x,y : x-y, 300, 1)
+ 
+      - The batch interval is set up with your SparkContext:
+            scc = StreamingContext(sc, 1)
+      - You can use reduceByWindow() or reduceByKeyAndWindow() to aggregate data across a longer period of time!
+            hashtagCounts = hashtagKeyValues.reduceByKeyAndWindow(lambda x, y:x + y, lambda x,y : x-y, 300, 1)
+            
 #### What is structured streaming ?
     - A new, higher-level API for streaming strcutured data
         - Available in Spark 2.0 and 2.1 as an experimental release.
@@ -147,6 +152,7 @@ Process continous stream of data in near real-time
                               Data stream as an unbounded Input Table
                               
  _Advantages of Structured Streaming_
+ 
  - Streaming code looks a lot like the equivalend non- streaming code
  - Structured data allows Spark to represent data more efficiently
  - SQL-style queries allow for query optimization opportunities- and even better performance.
@@ -154,27 +160,29 @@ Process continous stream of data in near real-time
     - MLLib is also moving toward DataSets as its primary API.
  - DataSets in general is the direction Spark is moving.
  - Once you have a SparkSession, you can stream data, query it, and write out the results.
-      - 2 lines of code to stream in structured JSON log data, count up "action" values for each hour, and write out the results.
-        val inputDF = spark.readStream.json("s3://logs")
-        inputDF.gorupBy($"action", window($"time", "1 hour")).count()
-            .writeStream.format("jdbc").start("jdbc:mysql//...")
+      - 2 lines of code to stream in structured JSON log data, count up "action" values for each hour, and write out the             results.
+      
+            val inputDF = spark.readStream.json("s3://logs")
+            inputDF.gorupBy($"action", window($"time", "1 hour")).count()
+                .writeStream.format("jdbc").start("jdbc:mysql//...")
             
  #### Spark Streaming with Flume
+ 
  - We'll set up Flume to use a spooldir source as before
  - But use an Avro sink to connect it to our Spark Streaming job!
     - Use a window to aggregate how often each unique URL sppears from our access log.
  - Using Avro in this manner is a "push" mechanism to Spark Streaming
     - You can also "pull" data by using a custom sink for Spark Streaming
    
-                   -------------------------------------------------- 
-                  |                        Flume                     |  
-   ________       |  ___________           __________        ______  |                      _________
-  |  Logs  | ---> | | Source    |  --->   | Channel  | ---> | Sink | |---> Spark      ---> | Console |
-   ________       | |(spooldir) |         | (memory) |      |(Avro)| |     Streaming        _________
-                  |  ___________           __________        ______  |
-                  |                                                  |
-                   --------------------------------------------------
-                                               
+                           -------------------------------------------------- 
+                          |                        Flume                     |  
+           ________       |  ___________           __________        ______  |                      _________
+          |  Logs  | ---> | | Source    |  --->   | Channel  | ---> | Sink | |---> Spark      ---> | Console |
+           ________       | |(spooldir) |         | (memory) |      |(Avro)| |     Streaming        _________
+                          |  ___________           __________        ______  |
+                          |                                                  |
+                           --------------------------------------------------
+
                                                
                                                
               

@@ -187,5 +187,5 @@ _Analyze web logs published with Flume using Spark Streaming_
 - Login to hadoop terminal as maria_dev
 - wget http://media.sundog-soft.com/hadoop/sparkstreaminglume.conf
 - wget http://media.sundog-soft.com/hadoop/SparkFlume.py
-- 
+- process
 - 

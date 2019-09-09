@@ -101,3 +101,54 @@ Helps in data streaming
                                               \|/   /
                                               Channel:
                                               memory
+
+#### Set up Flume and publish logs with it:
+- Login to hadoop terminal as maria_dev
+- wget media.sundog-soft.com/hadoop/example.conf
+- Now, open second hadoop terminal.
+- cd /usr/hdp/current/flume-server/
+- bin/flume-ng agent --conf conf --conf-file ~/example.conf --name a1 -Dflume.root.logger=INFO,console
+- In first terminal: 
+
+     $ telnet localhost 44444
+ 
+     $ Hello there, how are you doing?
+     
+     $ Forescore and seven years ago
+     
+     Ctrl + c
+     
+ - quit
+ 
+ #### Set up Flume to monitor a directory and store its data in HDFS
+ - In first terminal,
+ 
+     $ pwd
+     
+     $ wget media.sundog-soft.com/hadoop/flumelogs.conf
+        
+ - mkdir spool
+ 
+ - Login to Ambari.
+ 
+ - Go to FileView -> user-> maria_dev -> NewFolder -> name: flume
+ 
+ - In second terminal, 
+ 
+    $ bin/flume-ng agent --conf conf --conf-file ~/flumelogs.conf --name a1 -Dflume.root.logger=INFO,console
+    
+ - In first terminal,
+ 
+    $ cp access_log_small.txt spool/fred.txt
+    
+    $ cd spool
+    
+ - Go to Ambari to see the logs -> user -> maria_dev -> flume -> 17-01-14(current date) -> 2240(current time) -> 00
+ 
+ - In second terminal, 
+ 
+     $ Ctrl + C 
+     
+     $ quit
+     
+ - In first terminal, $ exit and ACPI shutdown.

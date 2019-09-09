@@ -187,5 +187,27 @@ _Analyze web logs published with Flume using Spark Streaming_
 - Login to hadoop terminal as maria_dev
 - wget http://media.sundog-soft.com/hadoop/sparkstreaminglume.conf
 - wget http://media.sundog-soft.com/hadoop/SparkFlume.py
-- process
-- 
+- pwd
+- mkdir checkpoint
+- export SPARK_MAJOR_VERSION=2
+- spark-submit --packages org.apache.spark:spark-streaming-flume_2.11:2.0.0 SparkFlume.py
+- Open second terminal as maria_dev.
+- cd /usr/hdp/current/flume-server/
+- bin/flume-ng agent --conf conf-file ~/sparkstreaming.conf --name a1
+- open third terminal as maria_dev
+- ls
+- wget http://media.sundog-soft.com/hadoop/access_log.txt
+- cp access_log.txt spool/log22.txt
+- cp access_log.txt spool/log23.txt
+- exit
+- exit
+- exit
+
+_Aggregating HTTP access codes with Spark Streamin_
+- open 3 terminal as maria_dev
+- In 1st terminal; $ spark-submit --packages org.apache.spark:spark-streaming-flume_2.11:2.0.0 SparkFlumeExcercise.py
+- In 2nd terminal; $ in/flume-ng agent --conf conf-file ~/sparkstreamingflume.conf --name a1
+- In 3rd terminal; 
+
+                   $ cp access_log.txt spool/log30.txt
+                   $ cp access_log.txt spool/log31.txt

@@ -47,7 +47,7 @@ Step 4:
     - Now, NameNode will create a record for new file created.
 
 **Backup MetaData in HDFS**
-- NameNode write to local disk and NFS
+- NameNode write to local disk and NFS(Network File System).
 
 **Secondary NameNode**
 - It will maintain merge copy of edit log from primary name node that you can restore.

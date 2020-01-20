@@ -98,16 +98,21 @@ we have a Table with Movie Rating Data.
  
 1. Map users to movies they have watched. For Mapper function; There are two coloumn which consist valuable information for mapper i.e UserID and MovieID.
 2. Output from Mapper will be:      
-             _196:242  186:302  196:377  244:51  166:346  186:474  186:265_
+
+            _196:242 186:302    196:377  244:51  166:346  186:474  186:265_
+            
 3. Extract and organize whatever information needed.
 
 - MapReduce sorts and groups the mapped data using SHUFFLE & SORT.
 
 1. Output from shuffle and sort will be:
+
             _196:242  186:302  196:377  244:51  166:346  186:274  186:265_
                                           |
             _166:346  186:302,274,265  196:242,377  244:51_
+            
 - REDUCER process each key's value using len() function.
+
            _166:346  186:302,274,265  196:242,377  244:51_
                                  | len(movies)
                    _166:1   186:3   196:2  244:1_

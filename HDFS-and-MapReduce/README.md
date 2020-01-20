@@ -84,9 +84,9 @@ Step 4:
       
 Let's understand it with example:
 we have a Table with Movie Rating Data.
- _______________________________________
+
 | userID | movieID | rating | timestamp |
- _______________________________________
+| --- | --- | ---| --- |
 | 196    | 242     | 3      | 88123     |
 | 186    | 302     | 3      | 88124     |
 | 196    | 377     | 1      | 88125     |
@@ -94,7 +94,7 @@ we have a Table with Movie Rating Data.
 | 166    | 346     | 1      | 88127     |
 | 186    | 474     | 4      | 88128     |
 | 186    | 265     | 2      | 88129     |
- _______________________________________
+
  
 1. Map users to movies they have watched. For Mapper function; There are two coloumn which consist valuable information for mapper i.e UserID and MovieID.
 2. Output from Mapper will be:      

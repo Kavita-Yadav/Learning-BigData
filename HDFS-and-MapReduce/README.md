@@ -105,7 +105,7 @@ we have a Table with Movie Rating Data.
 
 - MapReduce sorts and groups the mapped data using SHUFFLE & SORT.
 
-1. Output from shuffle and sort will be:
+4. Output from shuffle and sort will be:
 
             196:242  186:302  196:377  244:51  166:346  186:274  186:265
                                     |

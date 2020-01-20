@@ -10,7 +10,7 @@
  
 - There will be one Namenode as master and multiple Datanode as slave.
 
-![Image description](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/Screenshot%20from%202020-01-20%2017-30-46.png)
+![Image description](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png)
 
                    Name Node
                        |

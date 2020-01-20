@@ -88,9 +88,30 @@
 
 Note: The last 19 fields are the genres of the movies, a 1 indicates the movie is of that genre, a 0 indicates it is not; movies can be in several genres at once. The movie ids are the ones used in the u.data data set.
                               
-
-                u.genre    -- A list of the genres.
-
+  - u.genre    -- A list of the genres.
+  
+| Genre Name | Genre id|
+| --- | --- |
+| unknown | 0 |
+| Action | 1 |
+| Adventure | 2 |
+| Animation | 3 |
+| Children's | 4 |
+| Comedy | 5 |
+| Crime | 6 |
+| Documentary | 7 |
+| Drama | 8 |
+| Fantasy | 9 |
+| Film-Noir | 10 |
+| Horror | 11 |
+| Musical | 12 |
+| Mystery | 13 |
+| Romance | 14 |
+| Sci-Fi | 15 |
+| Thriller | 16 |
+| War | 17 |
+| Western | 18 |
+ 
                 u.user     -- Demographic information about the users; this is a tab
                               separated list of
                               user id | age | gender | occupation | zip code

@@ -122,7 +122,31 @@ Note: The last 19 fields are the genres of the movies, a 1 indicates the movie i
 | 4 | `occupation` | Occupation of the users|
 | 5 | `zip code` | Zip code of the location where users lives |
 
-                u.occupation -- A list of the occupations.
+ - u.occupation -- A list of the occupations of the users who rated the movies.
+ 
+|  Occupation |
+| --- |
+| administrator |
+| artist |
+| doctor |
+| educator |
+| engineer |
+| entertainment |
+| executive |
+| healthcare |
+| homemaker |
+| lawyer |
+| librarian |
+| marketing |
+| none |
+| other |
+| programmer |
+| retired |
+| salesman |
+| scientist |
+| student |
+| technician |
+| writer |
 
                 u1.base    -- The data sets u1.base and u1.test through u5.base and u5.test
                 u1.test       are 80%/20% splits of the u data into training and test data.

@@ -137,7 +137,7 @@ we have a Table with Movie Rating Data.
 - If entire node goes down,it could be the application master and resource manager will try to restart it.
 - If resource manager goes down, set up 'High Availability(HA)' using Zookeeper to have a hot standby.
 
-_iExample of MapReduce for Movie Ratings data in python using above datatable:i_
+_Example of MapReduce for Movie Ratings data in python using above datatable:_
 
 1. Map each input line to (rating,1)
 2. Reduce each rating with sum of all the 1's.

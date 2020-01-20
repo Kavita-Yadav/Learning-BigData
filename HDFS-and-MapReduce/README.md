@@ -15,7 +15,7 @@
 
 **How to read a file in HDFS ?**
 
-![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/FileReadInHDFS.png)
+![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDFSFileRead.png)
 
 - Clientnode will first ask for file information from Namenode. Namenode will give the all details of file, 
 - for example: where is the file? what is the name of file ? etc. 

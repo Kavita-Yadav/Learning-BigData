@@ -119,14 +119,7 @@ we have a Table with Movie Rating Data.
                    
 **MapReduce on Cluster**
               
-       ClientNode --- Yarn Resource Manager ----- Node Manager(MapReduce Application Master)
-                                                            /                        \
-                 HDFS--------------------------NodeManager Node                    NodeManager
-                  | |                  (Map/Reduce Task | Map/Reduce Task)       (Map/Reduce Task)
-                  | |                            |                                      |
-                  | '----------------------------'                                      |
-                  |                                                                     |
-                  '---------------------------------------------------------------------'
+![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/MapReduceOnCluster.png)
                   
 **How mapper & reducer written ?**
 - MapReduce is natively Java.

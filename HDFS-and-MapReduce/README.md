@@ -12,14 +12,13 @@
 
 ![HDFS Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png)
 
+
 **How to read a file in HDFS ?**
 
-                ClientNode ---> Name Node
-                  |     \
-                  |       \
-             DataNode1   DataNode2
+![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/FileReadInHDFS.png)
 
 Clientnode will first ask for file information from Namenode. Namenode will give the all details of file, for example: where is the file? what is the name of file ? etc. Clientnode will get the information and will retrieve the file from defined path. For example: file is at DataNode2. Then client node will fetch the file from DataNode2.
+
 **How to write a file in HDFS ?**
 
 1. Client Node  -----> Name Node

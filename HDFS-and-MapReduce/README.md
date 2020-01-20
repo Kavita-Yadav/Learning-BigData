@@ -10,11 +10,7 @@
  
 - There will be one Namenode as master and multiple Datanode as slave.
 
-![Image description](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png)
-
-                   Name Node
-                       |
-         DataNode  DataNode  DataNode
+![HDFS Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png)
 
 **How to read a file in HDFS ?
 
@@ -24,7 +20,7 @@
              DataNode1   DataNode2
 
 Clientnode will first ask for file information from Namenode. Namenode will give the all details of file, for example: where is the file? what is the name of file ? etc. Clientnode will get the information and will retrieve the file from defined path. For example: file is at DataNode2. Then client node will fetch the file from DataNode2.
-
+https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png
 **How to write a file in HDFS ?
 
 1. Client Node  -----> Name Node

@@ -41,6 +41,7 @@
                               Each user has rated at least 20 movies.  Users and items are
                               numbered consecutively from 1.  The data is randomly
                               ordered. This is a tab separated list of data inside a u.data file:                            
+
 | Column Index | Column Name | Description |
 | --- | --- | --- |
 | 0 | `user id` | unique identity number of users who gave the ratings to the movie |
@@ -49,7 +50,8 @@
 | 3 | `timestamp` | The time stamps are unix seconds since 1/1/1970 UTC |
                               
   - u.info     -- The number of users, items, and ratings in the u data set.      
-| Attributes| Total Number |
+
+| :Attributes: | :Total Number: |
 | --- | --- |
 | users | 943 |
 | items | 1682 |

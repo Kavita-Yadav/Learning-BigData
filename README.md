@@ -27,8 +27,12 @@
         - ambari-admin-password-reset
 
 - #Data preparation:
+1. You can get the data directly from here https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/tree/master/MovieLensData.
+2. It has detailed description of data from grouplens.
+        OR
 1. Go to https://grouplens.org/ .(Direct link for 100k dataset: https://grouplens.org/datasets/movielens/100k/)
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
-3. Unzip 'ml-100k.zip'
+3. Unzip 'ml-100k.zip'.
+4. You can also try this with 1M, 10M and 20M data from here https://grouplens.org/datasets/movielens/.
 
       

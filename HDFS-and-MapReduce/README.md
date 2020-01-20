@@ -78,7 +78,7 @@ Step 4:
         DataSet ----> Mapper ----> Shuffle & Sort ----> Reducer
 
 **MapReduce Working**
-- MAPPER conver raw source data into key/value pairs.
+- MAPPER convert raw source data into key/value pairs.
 
        InputData ---> Mapper ----> k1:v k2:v k3:v
       

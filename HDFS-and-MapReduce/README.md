@@ -80,7 +80,7 @@ Step 4:
 **MapReduce Working**
 - MAPPER conver raw source data into key/value pairs.
 
-      InputData ---> Mapper ----> k1:v k2:v k3:v
+       InputData ---> Mapper ----> k1:v k2:v k3:v
       
 Let's understand it with example:
 we have a Table with Movie Rating Data.
@@ -98,7 +98,7 @@ we have a Table with Movie Rating Data.
  
 1. Map users to movies they have watched. For Mapper function; There are two coloumn which consist valuable information for mapper i.e UserID and MovieID.
 2. Output from Mapper will be:      
-             _i196:242  186:302  196:377  244:51  166:346  186:474  186:265i_
+             _i 196:242  186:302  196:377  244:51  166:346  186:474  186:265 _
 3. Extract and organize whatever information needed.
 
 - MapReduce sorts and groups the mapped data using SHUFFLE & SORT.

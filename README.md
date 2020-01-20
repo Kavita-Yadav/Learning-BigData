@@ -49,7 +49,7 @@
 | 3 | `rating` | number of rating given by user out of 5 star; 5 start means movie is super hit; 1 means movie is flop |
 | 4 | `timestamp` | The time stamps are unix seconds since 1/1/1970 UTC |
                               
-          - u.info     -- The number of users, items, and ratings in the u data set.      
+          - u.info   -- The number of users, items, and ratings in the u data set.      
 
 | Attributes | Total Number |
 | --- | --- |
@@ -57,7 +57,7 @@
 | items | 1682 |
 | ratings |  100000 |              
 
-          - u.item     -- Information about the items (movies); this is a tab separated list of all fields belongs to this file:
+          - u.item  -- Information about the items (movies); this is a tab separated list of all fields belongs to this file:
  
 | Column Index | Column Name | Description |
 | --- | --- | --- |
@@ -88,7 +88,7 @@
 
 Note: The last 19 fields are the genres of the movies, a 1 indicates the movie is of that genre, a 0 indicates it is not; movies can be in several genres at once. The movie ids are the ones used in the u.data data set.
                               
-          - u.genre    -- A list of the genres.
+          - u.genre  -- A list of the genres.
   
 | Genre Name | Genre id|
 | --- | --- |
@@ -112,7 +112,7 @@ Note: The last 19 fields are the genres of the movies, a 1 indicates the movie i
 | War | 17 |
 | Western | 18 |
  
-         - u.user     -- Demographic information about the users; this is a tab separated list of users daya fields:
+         - u.user   -- Demographic information about the users; this is a tab separated list of users daya fields:
                               
 | Column Index | Column Name | Description |
 | --- | --- | --- |

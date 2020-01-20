@@ -55,22 +55,39 @@
 | --- | --- |
 | users | 943 |
 | items | 1682 |
-| ratings |  100000 |
+| ratings |  100000 |              
+
+  - u.item     -- Information about the items (movies); this is a tab separated list of all fields belongs to this file:
+ 
+| Column Index | Column Name | Description |
+| --- | --- | --- |
+| 0 | `movie id` | unique identity number of users who gave the ratings to the movie, it is similar to item id from u.data |
+| 1 | `movie title` | The title of the movie |
+| 2 | `release date` | The release date of the movie |
+| 3 | `video release date` | This column is blank |
+| 4 | `IMDb URL` | IMDb URL link of the movie |
+| 5 | `unknown` | Movie belongs to **unknown** genre |
+| 6 | `Action` | Movie belongs to **Action** genre |
+| 7 | `Adventure` | Movie belongs to **Adventure** genre |
+| 8 | `Animation` | Movie belongs to **Animation** genre |
+| 9 | `Children's` | Movie belongs to **Children's** genre |
+| 10 | `Comedy` | Movie belongs to **Comedy** genre |
+| 11 | `Crime` | Movie belongs to **Crime** genre |
+| 12 | `Documentary` | Movie belongs to **Documentary** genre |
+| 13 | `Drama` | Movie belongs to **Drama** genre |
+| 14 | `Fantasy` | Movie belongs to **Fantasy** genre |
+| 15 | `Film-Noir` | Movie belongs to **Film-Noir** genre |
+| 16 | `Horror` | Movie belongs to **Horror** genre |
+| 17 | `Musical` | Movie belongs to **Musical** genre |
+| 18 | `Mystery` | Movie belongs to **Mystery** genre |
+| 19 | `Romance` | Movie belongs to **Romance** genre |
+| 20 | `Sci-Fi` | Movie belongs to **Sci-Fi** genre |
+| 21 | `Thriller` | Movie belongs to **Thriller** genre |
+| 22 | `War` | Movie belongs to **War** genre |
+| 23 | `Western` | Movie belongs to **Western** genre |
+
+Note: The last 19 fields are the genres of the movies, a 1 indicates the movie is of that genre, a 0 indicates it is not; movies can be in several genres at once. The movie ids are the ones used in the u.data data set.
                               
-
-                
-
-                u.item     -- Information about the items (movies); this is a tab separated
-                              list of
-                              movie id | movie title | release date | video release date |
-                              IMDb URL | unknown | Action | Adventure | Animation |
-                              Children's | Comedy | Crime | Documentary | Drama | Fantasy |
-                              Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi |
-                              Thriller | War | Western |
-                              The last 19 fields are the genres, a 1 indicates the movie
-                              is of that genre, a 0 indicates it is not; movies can be in
-                              several genres at once.
-                              The movie ids are the ones used in the u.data data set.
 
                 u.genre    -- A list of the genres.
 

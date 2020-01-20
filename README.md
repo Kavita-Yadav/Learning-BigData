@@ -57,7 +57,8 @@
 | items | 1682 |
 | ratings |  100000 |              
 
-          - u.item  -- Information about the items (movies); this is a tab separated list of all fields belongs to this file:
+          - u.item  -- Information about the items (movies); 
+                       this is a tab separated list of all fields belongs to this file:
  
 | Column Index | Column Name | Description |
 | --- | --- | --- |
@@ -112,7 +113,8 @@ Note: The last 19 fields are the genres of the movies, a 1 indicates the movie i
 | War | 17 |
 | Western | 18 |
  
-         - u.user   -- Demographic information about the users; this is a tab separated list of users daya fields:
+         - u.user   -- Demographic information about the users; 
+                       this is a tab separated list of users data fields:
                               
 | Column Index | Column Name | Description |
 | --- | --- | --- |

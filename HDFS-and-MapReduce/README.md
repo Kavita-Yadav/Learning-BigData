@@ -27,6 +27,8 @@
     1. Client Node  -----> Name Node
     - Clientnode will first ask to Namenode to create a new entry.
     - Namenode will acknowledge than entry created and now I have started to track this file.
+    
+    
 
     2. Client Node ------> Data Node 1
     - Clientnode then create a file on Data Node.

@@ -24,17 +24,23 @@
 
 **How to write a file in HDFS ?**
 
+Step 1:
+
     1. Client Node  -----> Name Node
     - Clientnode will first ask to Namenode to create a new entry.
     - Namenode will acknowledge than entry created and now I have started to track this file.
     
-    
+Step 2:
 
     2. Client Node ------> Data Node 1
     - Clientnode then create a file on Data Node.
 
+Step 3:
+
     3. DataNode1 ----> DataNode2 ----> DataNode3
     - DataNode1 will tell to other Datanodes to replicate file on each block of Datanode2 & Datanode3.
+
+Step 4:
 
     4. DataNode3 -----> DataNode2 -------> DataNode1 ------> ClientNode-----> NameNode
     - DataNode will acknowlege back to NameNode that everything is working perfectly via ClientNode

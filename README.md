@@ -27,7 +27,7 @@
         - ambari-admin-password-reset
 
 - #Data preparation:
-1. Go to https://grouplens.org/ .
+1. Go to https://grouplens.org/ .(Direct link for 100k dataset: https://grouplens.org/datasets/movielens/100k/)
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
 3. Unzip 'ml-100k.zip'
 

@@ -30,11 +30,6 @@
 1. Go to https://grouplens.org/ .
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
 3. Unzip 'ml-100k.zip'
-
-| Command | Description |
-| --- | --- |
-| `git status` | List all *new or modified* files |
-| `git diff` | Show file differences that **haven't been** staged |
        
        -  DETAILED DESCRIPTIONS OF DATA FILES
 
@@ -47,6 +42,11 @@
                               Each user has rated at least 20 movies.  Users and items are
                               numbered consecutively from 1.  The data is randomly
                               ordered. This is a tab separated list of data inside a u.data file:
+                              
+                              | Command | Description |
+| --- | --- |
+| `git status` | List all *new or modified* files |
+| `git diff` | Show file differences that **haven't been** staged |
                               
                               | Column Index | Column Name | Description |
                               | --- | --- |

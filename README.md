@@ -51,7 +51,7 @@
                               
   - u.info     -- The number of users, items, and ratings in the u data set.      
 
-| :Attributes: | :Total Number: |
+| Attributes | Total Number |
 | --- | --- |
 | users | 943 |
 | items | 1682 |

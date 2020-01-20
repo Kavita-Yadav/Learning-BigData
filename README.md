@@ -30,6 +30,11 @@
 1. Go to https://grouplens.org/ .
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
 3. Unzip 'ml-100k.zip'
+
+| Command | Description |
+| --- | --- |
+| `git status` | List all *new or modified* files |
+| `git diff` | Show file differences that **haven't been** staged |
        
        -  DETAILED DESCRIPTIONS OF DATA FILES
 

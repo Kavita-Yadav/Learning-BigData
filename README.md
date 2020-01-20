@@ -31,6 +31,12 @@
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
 3. Unzip 'ml-100k.zip'
 
+        This data set consists of:
+                * 100,000 ratings (1-5) from 943 users on 1682 movies. 
+                * Each user has rated at least 20 movies. 
+                * Simple demographic info for the users (age, gender, occupation, zip)
+
+
         - DETAILED DESCRIPTIONS OF DATA FILES:
 
           - ml-data.tar.gz   -- Compressed tar file.  To rebuild the u data files do this:

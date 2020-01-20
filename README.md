@@ -31,18 +31,18 @@
 2. Download MovieLens 100k Dataset by downloading 'ml-100k.zip' data file.
 3. Unzip 'ml-100k.zip'
 
--  DETAILED DESCRIPTIONS OF DATA FILES:
+- DETAILED DESCRIPTIONS OF DATA FILES:
      
-    - ml-data.tar.gz   -- Compressed tar file.  To rebuild the u data files do this:
+  - ml-data.tar.gz   -- Compressed tar file.  To rebuild the u data files do this:
                                 gunzip ml-data.tar.gz
                                 tar xvf ml-data.tar
                                 mku.sh
-    - u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
+   - u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
                               Each user has rated at least 20 movies.  Users and items are
                               numbered consecutively from 1.  The data is randomly
                               ordered. This is a tab separated list of data inside a u.data file:                            
 
-:| Column Index | Column Name | Description |:
+| Column Index | Column Name | Description |
 | --- | --- | --- |
 | 0 | `user id` | unique identity number of users who gave the ratings to the movie |
 | 1 | `item id` | unique identity number of movie/item which is rated by user |

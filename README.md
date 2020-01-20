@@ -40,8 +40,7 @@
     - u.data     -- The full u data set, 100000 ratings by 943 users on 1682 items.
                               Each user has rated at least 20 movies.  Users and items are
                               numbered consecutively from 1.  The data is randomly
-                              ordered. This is a tab separated list of data inside a u.data file:                       
-     
+                              ordered. This is a tab separated list of data inside a u.data file:                            
 
 | Column Index | Column Name | Description |
 | --- | --- | --- |
@@ -50,15 +49,16 @@
 | 2 | `rating` | number of rating given by user out of 5 star; 5 start means movie is super hit; 1 means movie is flop |
 | 3 | `timestamp` | The time stamps are unix seconds since 1/1/1970 UTC |
                               
-       
+   - u.info     -- The number of users, items, and ratings in the u data set.    
       
-
-                
-
-                
+| Attributes| Total Number |
+| --- | --- |
+| users | 943 |
+| items | 1682 |
+| ratings |  100000 |
                               
 
-                u.info     -- The number of users, items, and ratings in the u data set.
+                
 
                 u.item     -- Information about the items (movies); this is a tab separated
                               list of

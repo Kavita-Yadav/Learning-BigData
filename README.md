@@ -42,7 +42,7 @@
                               numbered consecutively from 1.  The data is randomly
                               ordered. This is a tab separated list of data inside a u.data file:                            
 
-| Column Index | Column Name | Description |
+:| Column Index | Column Name | Description |:
 | --- | --- | --- |
 | 0 | `user id` | unique identity number of users who gave the ratings to the movie |
 | 1 | `item id` | unique identity number of movie/item which is rated by user |

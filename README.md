@@ -44,10 +44,10 @@
 
 | Column Index | Column Name | Description |
 | --- | --- | --- |
-| 0 | `user id` | unique identity number of users who gave the ratings to the movie |
-| 1 | `item id` | unique identity number of movie/item which is rated by user |
-| 2 | `rating` | number of rating given by user out of 5 star; 5 start means movie is super hit; 1 means movie is flop |
-| 3 | `timestamp` | The time stamps are unix seconds since 1/1/1970 UTC |
+| 1 | `user id` | unique identity number of users who gave the ratings to the movie |
+| 2 | `item id` | unique identity number of movie/item which is rated by user |
+| 3 | `rating` | number of rating given by user out of 5 star; 5 start means movie is super hit; 1 means movie is flop |
+| 4 | `timestamp` | The time stamps are unix seconds since 1/1/1970 UTC |
                               
   - u.info     -- The number of users, items, and ratings in the u data set.      
 
@@ -61,7 +61,7 @@
  
 | Column Index | Column Name | Description |
 | --- | --- | --- |
-| 0 | `movie id` | unique identity number of users who gave the ratings to the movie, it is similar to item id from u.data |
+| 0 | `movie id` | unique identity number of movie/item which is rated by user, it is similar to item id from u.data |
 | 1 | `movie title` | The title of the movie |
 | 2 | `release date` | The release date of the movie |
 | 3 | `video release date` | This column is blank |
@@ -112,10 +112,15 @@ Note: The last 19 fields are the genres of the movies, a 1 indicates the movie i
 | War | 17 |
 | Western | 18 |
  
-                u.user     -- Demographic information about the users; this is a tab
-                              separated list of
-                              user id | age | gender | occupation | zip code
-                              The user ids are the ones used in the u.data data set.
+ - u.user     -- Demographic information about the users; this is a tab separated list of users daya fields:
+                              
+| Column Index | Column Name | Description |
+| --- | --- | --- |
+| 1 | `user id` | unique identity number of users who gave the ratings to the movie, it is similar to user id from u.data |
+| 2 | `age` | Age of the users who rated the movies |
+| 3 | `gender` | Gender of the users |
+| 4 | `occupation` | Occupation of the users|
+| 5 | `zip code` | Zip code of the location where users lives |
 
                 u.occupation -- A list of the occupations.
 

@@ -126,7 +126,7 @@ Note: The last 19 fields are the genres of the movies, a 1 indicates the movie i
 
          - u.occupation -- A list of the occupations of the users who rated the movies.
  
-|  Occupation |
+|  List Of Occupation |
 | --- |
 | administrator, artist, doctor, educator, engineer, entertainment, executive, healthcare, homemaker, lawyer, librarian, marketing, none, other, programmer,retired, salesman ,scientist, student, technician, writer |
 

@@ -24,19 +24,19 @@
 
 **How to write a file in HDFS ?**
 
-1. Client Node  -----> Name Node
-- Clientnode will first ask to Namenode to create a new entry.
-- Namenode will acknowledge than entry created and now I have started to track this file.
+    1. Client Node  -----> Name Node
+    - Clientnode will first ask to Namenode to create a new entry.
+    - Namenode will acknowledge than entry created and now I have started to track this file.
 
-2. Client Node ------> Data Node 1
-- Clientnode then create a file on Data Node.
+    2. Client Node ------> Data Node 1
+    - Clientnode then create a file on Data Node.
 
-3. DataNode1 ----> DataNode2 ----> DataNode3
-- DataNode1 will tell to other Datanodes to replicate file on each block of Datanode2 & Datanode3.
+    3. DataNode1 ----> DataNode2 ----> DataNode3
+    - DataNode1 will tell to other Datanodes to replicate file on each block of Datanode2 & Datanode3.
 
-4. DataNode3 -----> DataNode2 -------> DataNode1 ------> ClientNode-----> NameNode
-- DataNode will acknowlege back to NameNode that everything is working perfectly via ClientNode
-- Now, NameNode will create a record for new file created.
+    4. DataNode3 -----> DataNode2 -------> DataNode1 ------> ClientNode-----> NameNode
+    - DataNode will acknowlege back to NameNode that everything is working perfectly via ClientNode
+    - Now, NameNode will create a record for new file created.
 
 **Backup MetaData in HDFS**
 - NameNode write to local disk and NFS

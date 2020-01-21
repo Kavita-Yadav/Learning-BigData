@@ -14,19 +14,20 @@
 #### Document-base data model:
 
 Looks like JSON.Example:
-{
-      "_id": ObjectID("7b33e366ae32223aee34fd3),
-      "title": "A blog post about MongoDB",
-      "content": "This is a blog post about MongoDB",
-      "comments": [
-                {
-                      "name": "Frank"
-                      "email": fkane@sundog-soft.com
-                      "content": "This is the best article ever written!"
-                      "rating": 1
-                  }
-                ]
- }
+
+    {
+          "_id": ObjectID("7b33e366ae32223aee34fd3),
+          "title": "A blog post about MongoDB",
+          "content": "This is a blog post about MongoDB",
+          "comments": [
+                    {
+                          "name": "Frank"
+                          "email": fkane@sundog-soft.com
+                          "content": "This is the best article ever written!"
+                          "rating": 1
+                      }
+                    ]
+     }
  
  #### No real schema is enforced:
  

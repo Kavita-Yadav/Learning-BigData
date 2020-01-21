@@ -1,4 +1,6 @@
-#####PROGRAMMING HADOOP WITH PIG#####
+##############################
+#### PROGRAMMING HADOOP WITH PIG
+##############################
 
 **Introduction of Pig**
 
@@ -54,7 +56,7 @@
 7. Copy content of 'Old5RatedMovieUsingPig.txt' file and paste into script window at Ambari.
 8. Click on Execute and wait for the results.
 
-_iNote: For more faster result need to check 'execute on Tez' checkbox and click on 'Execute'.i_
+_Note: For more faster result need to check 'execute on Tez' checkbox and click on 'Execute'._
 
 **Pig Latin: Things you can do to a realtion**
 - LOAD, STORE, DUMP

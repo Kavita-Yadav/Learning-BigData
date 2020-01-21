@@ -27,21 +27,8 @@ Publish/subscribe Messaging with Kafka.
 - It's not just for Hadoop. You can use this for any sort of application outside of hadoop as well.
 
 #### Kafka architecture
-                                              *Producers*    
-                                
-                                    App         App         App
-                                     \           |           /
-                                       \         |          /
-                                       \|/      \|/       \|/
-                                       _______________________
-       *Connectors*   DB -----------> |    Kafka Cluster      |<-----------> App      *Stream Processors*
-                        ,------------- _______________________
-                       |                    /    |    \
-                      \|/                  /     |      \                    
-                      DB                 \|/    \|/     \|/
-                                         App    App     App
-                      
-                                              *Consumers*
+
+![Kafka Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/KafkaArchitect.png)
                                               
 #### Setting up Kafka, and publishing some data
 - Login to Ambari as admin.

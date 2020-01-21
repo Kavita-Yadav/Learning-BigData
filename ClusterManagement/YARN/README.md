@@ -26,7 +26,7 @@
                        
 #### YARN just generalizes this:
    
-![Yarn](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/YARN.png)     
+![Yarn](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/YarnArch.png)     
                        
                        
 #### How YARN works:

@@ -18,7 +18,7 @@ Do you really need SQL?
 
 Sample Architecture:
 
-![Sample Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/RelationalDataStoresWithHadoop/sqoop/SqoopArchitecture.png)
+![Sample Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Sample_architecture.png)
                            
 Use the right tool for the job:
 
@@ -29,7 +29,7 @@ Use the right tool for the job:
   
 Sample application architecture:
 
-![Sample Application Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/SampleAppArchitecture.png)
+![Sample Application Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/SampleAppArchitecture.png)
                            
 #### Choosing your Database:
 - When you don't even need some external database. Following factor can help to make decision for this case:

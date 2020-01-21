@@ -5,7 +5,7 @@
 ######################################
 
 - Installation of Virtual machine:
-1. Go to https://www.virtualbox.org and download a version for your OS.(I have installed for Ubuntu)
+1. Go to https://www.virtualbox.org and download a version for your OS.(I have tried with Ubuntu)
 2. After download, run the .exe file and install the virtual box on your machine.
 
 - Download image for Hadoop:

@@ -29,18 +29,7 @@ Use the right tool for the job:
   
 Sample application architecture:
 
-          Happy Customers
-                |
-             Internet
-                |
-            Web Servers
-                |
-               \|/          _______________
-              MangoDB <-- |Spark Streaming| <--- Data source(s)
-                          |_______________|
-                          |     Hadoop    |
-                          |   YARN/HDFS   |
-                           _______________
+![Sample Application Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/SampleAppArchitecture.png)
                            
 #### Choosing your Database:
 - When you don't even need some external database. Following factor can help to make decision for this case:

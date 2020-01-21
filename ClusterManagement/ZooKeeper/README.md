@@ -16,10 +16,8 @@
   - Master crashes, needs to fail over to a backup.
   - Worker crashes - its work needs to be redistributed.
   - Network trouble - part of your cluster can't see the rest of it.
-
-                            Master
-                          
-                  Worker    Worker    Worker    
+  
+![Failure Modes](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/failureModes.png)
  
  * "Primitive' operations in a distributed system:
     - Master election
@@ -66,25 +64,8 @@
       
  #### ZooKeeper Architecture:
  
-                              __________                                     
-                             |  Master  |                                    _____________________
-                             |__________|                                   |   _______________   |
-                             | ZK Client|                                   |  |   ZooKeeper   |  |
-                              __________                                    |  |     Server    |  |
-            __________        __________        __________                  |   _______________   |
-           |  Worker  |      |  Worker  |      |  Worker  |                 |   _______________   |
-           |__________|      |__________|      |__________|                 |  |   ZooKeeper   |  |
-           | ZK Client|      | ZK Client|      | ZK Client|                 |  |     Server    |  |     ZooKeeper
-            __________        __________        __________                  |   _______________   |     ensemble
-                                                                            |   _______________   |   
-                                                                            |  |   ZooKeeper   |  |
-                                                                            |  |     Server    |  |
-             Clients have a list of Zookeeper servers to connect to         |   _______________   |
-                                                                            |   _______________   |
-                                                                            |  |   ZooKeeper   |  |
-                                                                            |  |     Server    |  |
-                                                                            |   _______________   |
-                                                                            |_____________________|
+![Zookeeper Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/ZookeeperArchitecture.png)
+
 Note: If ZooKeeper goes down, we can use another ZooKeeper server. So there is ZooKeeper ensemble which has number of ZooKeeper server present in it. It is more of work like a monogoDB.
                          
 #### Simulating a falling master with ZooKeeper:

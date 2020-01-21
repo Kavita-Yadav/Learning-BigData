@@ -50,7 +50,7 @@ Looks like JSON.Example:
       - Secondaries can elect a new primary within seconds if your primary goes down.
       - But make sure your operation log is long enough to give you time to recover the primary when it comes back
 
-![Replication Sets](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/ReplicationSets.png)
+![Replication Sets](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Replication.png)
                           
    #### Replica Set Quirks:
    - A majority of the servers in your set must agree in the primary

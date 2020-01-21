@@ -65,7 +65,7 @@ Hadoop cluster look like a realtional database.
 - It take unstructured data and just sort of applies a schema to it as it's being read instead. So data is still stored as tab-delimited text files or whatever it might be with no actual structure to it.
 - But Hive maintains a metastore, which is called as actual schema data that's associated with unstructured data.
 
-_Schema on Read: _
+_Schema on Read:_
 * Basically, hive maintains a "metastore" that imparts a structure you define on the structured data that is stored on HDFS etc.
 * For Example:
             
@@ -81,7 +81,7 @@ _Schema on Read: _
             LOAD DATA LOCAL INPATH '${env:HOME}/ml-100k/u.data'
             OVERWRITE INTO TABLE ratings;
             
-_Where is the data? _
+_Where is the data?_
   * LOAD DATA
     - MOVES data from a distributed filesystem into Hive.
   * LOAD DATA LOCAL
@@ -97,7 +97,7 @@ _Where is the data? _
         LOCATION '/data/ml-100k/u.data';
             
             
-_Partitioning: _
+_Partitioning:_
  - you can store your data in partitioned subdirectories.
  - Huge optimization if your queries are only on certain partitions.
  

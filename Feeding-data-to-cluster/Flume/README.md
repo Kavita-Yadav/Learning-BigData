@@ -73,11 +73,11 @@ Helps in data streaming
   
   #### Create Simple Flow:
 
-    ![simple flow](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/SimpleFlow.png)
+   ![simple flow](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/SimpleFlow.png)
                            
        * Log spool to HDFS
        
-    ![spool to HDFS](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/LogSpoolToHDFS.png)
+   ![spool to HDFS](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/LogSpoolToHDFS.png)
 
 #### Set up Flume and publish logs with it:
 - Login to hadoop terminal as maria_dev

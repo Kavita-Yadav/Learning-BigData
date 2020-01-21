@@ -26,25 +26,7 @@
                        
 #### YARN just generalizes this:
    
-           _____________                ___________           _____________
-           | Client Node |--------------|   YARN    |         | NodeManager |
-            _____________               |  Resource |         |_____________|
-                |                       |  Manager  |         |             |
-                |                        ___________          | Application |
-                |                                             |   Master    |
-                |                                              _____________
-                |                                                 /     \
-             _______                                             /        \
-            | HDFS  |                               _______________________      ______________
-             _______  \----------------------------| NodeManager Node      |    | NodeManager  |
-                       |                           |_______________________|    |______________|
-                       |                           |Application|Application|    | Application  |
-                       |                           |  Process  |  Process  |    |    Process   |
-                       |                            _______________________      ______________
-                       |                                  |                            |
-                       |----------------------------------|                            |
-                       |                                                               |
-                       |_______________________________________________________________      
+![Yarn](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/YARN.png)     
                        
                        
 #### How YARN works:

@@ -10,12 +10,12 @@
  
 - There will be one Namenode as master and multiple Datanode as slave.
 
-![HDFS Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDF_Architecture.png)
+![HDFS Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/HDF_Architecture.png)
 
 
 **How to read a file in HDFS ?**
 
-![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/HDFSFileRead.png)
+![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/HDFSFileRead.png)
 
 - Clientnode will first ask for file information from Namenode. Namenode will give the all details of file, 
 - for example: where is the file? what is the name of file ? etc. 
@@ -119,7 +119,7 @@ we have a Table with Movie Rating Data.
                    
 **MapReduce on Cluster**
               
-![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/HDFS-and-MapReduce/MapReduceOnCluster.png)
+![HDFS FileRead](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/MapReduceOnCluster.png)
                   
 **How mapper & reducer written ?**
 - MapReduce is natively Java.

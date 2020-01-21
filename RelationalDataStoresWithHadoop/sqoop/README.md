@@ -14,22 +14,8 @@ Used to integrate MySQL and Hadoop. Before heading forward just a quick review a
 - Sqoop can handle BIG data.
 - It helps to rescue from import data from MySQL to Hadoop, Which actually kicks off MapReduce jobs to handle 
 importing or exporting your data.
-              
-              
-                                     ____________
-                                    |   MySQL/   |
-                                    |  PostGres/ |
-                                    |  whatever  |
-                                     ____________
-                                     /    |     \
-                                    /     |      \
-                                Mapper  Mapper  Mapper
-                                   \      |      /
-                                     \    |    /
-                                    ______________
-                                   |     HDFS     |
-                                    ______________
-                                    
+
+![Sqoop Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/RelationalDataStoresWithHadoop/sqoop/SqoopArchitecture.png)                        
   
  ## How to use sqoop ?
   Note: Target table must be exist in MySQL with expected column order. For examples: please use the data from data folder.

@@ -14,23 +14,13 @@
 
 #### Directed Acyclic Graphs:
 
-            Map   Map   Map
-             \    /\     /            Map   Map                     Map   Map    Map 
-              \  /  \   /               \   /                        \    /\     / 
-            Reduce  Reduce              Reduce                        \  /  \   /
-        HDFS---|------|---HDFS            /                          Reduce Reduce                  Map     Map
-              Map    Map                 /                              \     /                       \     /
-                \    /                  /                                \   /                          \ /
-                Reduce                 /                                 Reduce                        Reduce
-                   \                  /                                       \                        /
-          HDFS ---- \--------------  / ---- HDFS                                \                     /  
-                    Map            Map                                            \                 /
-                      \            /                                                \             /
-                       \          /                                                   \         /
-                         \       /                                                      \     /
-                          Reduce                                                        Reduce
-
-                     * Pig/Hive - MR *                                          * Pig/Hive - Tez *
+   **_Pig/Hive-MR_**
+   
+   ![Pig/Hive-MR](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/PigHiveMR.png)
+   
+   **_Pig/Hive-Tez_**
+   
+   ![Pig/Hive-Tez](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Tez.png)
     
    Notice that Tez don't use HDFS. Instead of dividing into different mapper reducer stages, It makes one sequence
    of dependencies and run it all together. That is why, It is lot faster.

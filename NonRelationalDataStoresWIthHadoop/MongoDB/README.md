@@ -68,7 +68,7 @@ Looks like JSON.Example:
   - Finally-"big data"
   - Ranges of some indexed value you specify are assigned to different replica sets.
   
-  ![Sharding](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Shrading.png)
+  ![Sharding](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Sharding.png)
                                                               
   #### Sharding Quirks:
   

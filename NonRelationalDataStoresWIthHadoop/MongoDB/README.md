@@ -96,52 +96,52 @@ Looks like JSON.Example:
        
  #### Install MangoDB, and Integrate Spark with MongoDB:
  
-  - Login to Hadoop Virtual node using maria_dev.
-  - $ su root
-  - cd /var/lib/ambari-server/resources/stacks
-  - $ ls
-  - $ cd HDP
-  - $ ls
-  - $ cd 2.5
-  - $ cd services
-  - $ pwd
-  - $ git clone https://github.com/nikunjness/mongo-ambari.git
-  - $ sudo service ambari restart
-  - Go to Ambari http://127.0.0.1:8080 and login as admin.
-  - Click on Action at left bottom.
-  - Click Add Service.
-  - Click on checkbox MongoDB.
-  - Click on next-> next-> next-> next-> Proceed Anyway->Deploy-> Next-> Complete.
-  - Go to Files View->user->maria_dev->ml-100k-> u.user
-  - Go back to hadoop terminal
-  - $ pip install pymongo
-  - $ pwd
-  - $ exit
-  - $ cd ~
-  - $ ls
-  - $ pwd
-  - $ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/MongoDB/MongoDBWithSpark.py
-  - $ export SPARK_MAJOR_VERSION=2
-  - $ spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 MongoDBWithSpark.py
-  - Note: _'_id' field is automatically added by mongoDB for unique identifier
+    - Login to Hadoop Virtual node using maria_dev.
+    - $ su root
+    - cd /var/lib/ambari-server/resources/stacks
+    - $ ls
+    - $ cd HDP
+    - $ ls
+    - $ cd 2.5
+    - $ cd services
+    - $ pwd
+    - $ git clone https://github.com/nikunjness/mongo-ambari.git
+    - $ sudo service ambari restart
+    - Go to Ambari http://127.0.0.1:8080 and login as admin.
+    - Click on Action at left bottom.
+    - Click Add Service.
+    - Click on checkbox MongoDB.
+    - Click on next-> next-> next-> next-> Proceed Anyway->Deploy-> Next-> Complete.
+    - Go to Files View->user->maria_dev->ml-100k-> u.user
+    - Go back to hadoop terminal
+    - $ pip install pymongo
+    - $ pwd
+    - $ exit
+    - $ cd ~
+    - $ ls
+    - $ pwd
+    - $ wget https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/NonRelationalDataStoresWIthHadoop/MongoDB/MongoDBWithSpark.py
+    - $ export SPARK_MAJOR_VERSION=2
+    - $ spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0 MongoDBWithSpark.py
+    - Note: _'_id' field is automatically added by mongoDB for unique identifier
   
   #### Using MongoDB shell:
-  - Login to sandbox using maria_dev
-  - $ mongo
-  - > use movielens
-  - > db.users.find( {user_id: 100} )
-  - > db.users.explain().find( {user_id: 100} )
-  - > db.users.createIndex( {user_id: 1} )
-  - > db.users.explain().find( {user_id: 100} )
-  - > db.users.find( {user_id: 100} )
-  - >  db.users.aggregate( [
-       ... ...  { $group: { _id: { occupation: "$occupation"}, avgAge: { $avg: "$age" } } }
-       ... ] )
-  - > db.users.count()
-  - > db.getCollectionInfos()
-  - > db.users.drop()
-  - > db.getCollectionInfos()
-  - > exit
-  - Go to Ambari. Click Services-> MongoDB->Service Actions-> Stop-> Confirm Stop-> Ok.
+    - Login to sandbox using maria_dev
+    - $ mongo
+    - > use movielens
+    - > db.users.find( {user_id: 100} )
+    - > db.users.explain().find( {user_id: 100} )
+    - > db.users.createIndex( {user_id: 1} )
+    - > db.users.explain().find( {user_id: 100} )
+    - > db.users.find( {user_id: 100} )
+    - >  db.users.aggregate( [
+         ... ...  { $group: { _id: { occupation: "$occupation"}, avgAge: { $avg: "$age" } } }
+         ... ] )
+    - > db.users.count()
+    - > db.getCollectionInfos()
+    - > db.users.drop()
+    - > db.getCollectionInfos()
+    - > exit
+    - Go to Ambari. Click Services-> MongoDB->Service Actions-> Stop-> Confirm Stop-> Ok.
                                                               
                                                               

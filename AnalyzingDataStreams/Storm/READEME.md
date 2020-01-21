@@ -19,27 +19,11 @@ Real-time stream processing
     - Transform, aggregate, write to database / HDFS
 - A toplogy is graph of spouts and bolts that process your stream
 
-          ,-------->  Bolt -------> Bolt
-         |                          /|\
-      Spout-----------.              |
-                     \|/             |
-                 ,->  Bolt ----------'
-                |     
-      Spout-----'
-        |        
-        '--------->   Bolt
+![Storm Terminology](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/StormTerminology.png)
 
 #### Storm Architecture
                                                                  
-                                         Supervisor  
-                                      
-                         Zookeeper       Supervisor 
-                         
-         Nimbus          Zookeeper       Supervisor 
-         
-                         Zookeeper       Supervisor 
-                         
-                                         Supervisor 
+![Storm ATchitecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/StormArchitecture.png)
                                       
 #### Developing Storm applications
 
@@ -65,13 +49,8 @@ _Example: WordCount_
 
    - we'll run the WordCount topology example and examine it.
    
-           _______________            __________            _____________
-          |     Spout     |          |   Bolt   |          |     Bolt     |
-          |    (random    | ------>  |  (split  | ------>  | (Keep count  |
-          |    sentence   |          |  into    |          |   of words   |
-          |    generator) |          |  words)  |          |   and emit   |
-           _______________            __________           |   results)   |
-                                                            ______________
+![WordCount Topology](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/WordCountTopology.png)
+
  - Start Hadoop virtual box.
  - Login to Ambari as admin.
  - Start Storm Service.

@@ -43,7 +43,7 @@ a database.
   
 ## Example: One row of a web table:
   
-  ![HBase Example](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/ExampleHBase.png)
+  ![HBase Example](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Example_HBase.png)
        
        
     - Wants to track all the links that connect to a given web page. Trying to figure out who links back to CNN.com.

@@ -14,11 +14,11 @@
 
 #### Directed Acyclic Graphs:
 
-   **_Pig/Hive-MR_**
+   - **_Pig/Hive-MR_**
    
    ![Pig/Hive-MR](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/PigHiveMR.png)
    
-   **_Pig/Hive-Tez_**
+   - **_Pig/Hive-Tez_**
    
    ![Pig/Hive-Tez](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Tez.png)
     

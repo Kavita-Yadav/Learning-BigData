@@ -18,15 +18,7 @@ Do you really need SQL?
 
 Sample Architecture:
 
-        
-                                Client & request
-                                      router
-                                 /     |     \
-                                /      |       \
-                           Shard 1   Shard 2  Shard N     
-                              |        |         |
-                           Shard 1   Shard 2  Shard N  
-                           backup    backup   backup
+![Sample Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/RelationalDataStoresWithHadoop/sqoop/SqoopArchitecture.png)
                            
 Use the right tool for the job:
 

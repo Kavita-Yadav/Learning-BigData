@@ -45,7 +45,7 @@ a database.
   
               key          Contents column family                Anchor column family 
                             Contents:                      Anchor:cnnsi.com  Anchor:my.look.ca
-       | com.cnn.www |    |  <html><head> CNN....|     | "CNN" |           | "CNN.com" |
+       | com.cnn.www |    |  <html><head> CNN....|         | "CNN" |        | "CNN.com" |
        
        
     - Wants to track all the links that connect to a given web page. Trying to figure out who links back to CNN.com.

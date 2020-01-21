@@ -10,15 +10,7 @@
     
 #### Where YARN fits in ?
 
-              ___________      ________      _________
-             | MapReduce |    | Spark  |    |   Tez   |       YARN Applications
-              ___________      ________      _________
-              _________________________________________
-             |                 YARN                    |      Cluster Compute Layer
-              _________________________________________
-              _________________________________________
-             |                 HDFS                     |     Cluster Storage Layer
-              _________________________________________
+![Yarnfits](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/YARNN.png)
     
 #### Remember how MapReduce works:
 

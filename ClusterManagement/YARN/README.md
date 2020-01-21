@@ -22,25 +22,7 @@
     
 #### Remember how MapReduce works:
 
-            _____________                ___________           _____________
-           | Client Node |--------------|   YARN    |         | NodeManager |
-            _____________               |  Resource |         |_____________|
-                |                       |  Manager  |         |  MapReduce  |
-                |                        ___________          | Application |
-                |                                             |   Master    |
-                |                                              _____________
-                |                                                 /     \
-             _______                                             /        \
-            | HDFS  |                               _______________________      ______________
-             _______  \----------------------------| NodeManager Node      |    | NodeManager  |
-                       |                           |_______________________|    |______________|
-                       |                           |MapTask/   |MapTask/   |    |  MapTask/    |
-                       |                           |ReduceTask |ReduceTask |    | ReduceTask   |
-                       |                            _______________________      ______________
-                       |                                  |                            |
-                       |----------------------------------|                            |
-                       |                                                               |
-                       |_______________________________________________________________
+![MapReduce](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/MapReduceOnCluster.png)
                        
 #### YARN just generalizes this:
    

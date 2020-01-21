@@ -24,25 +24,8 @@
    
 #### Phoenix architecture:
 
-                                  ________________
-                                 | Phoenix Client |
-                                 | (parsing, query|
-                                 |    plan)       |
-                                  ________________                           ____________
-                                 |    HBase API   | ----------------------> | Zookeeper  |
-                                  ________________                           ____________
-                                        /  \
-                                      /      \
-                     ___________________     __________________             
-                    | HBase  | Phoenix  |   | HBase | Phoenix  |
-                    | Region |   Co-    |   | Region|   Co-    |
-                    | Server | Processor|   | Server| Processor|
-                     ___________________     __________________
-                              |                      |
-                             \|/                    \|/
-                    ____________________________________________
-                   |                    HDFS                    |
-                    ____________________________________________
+![Phoenix Architecture](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/PhoenixArchitecture.png)
+
                     
  #### Using Phoenix:
  - Command-Line Interface (CLI).

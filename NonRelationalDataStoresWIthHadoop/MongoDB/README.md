@@ -49,11 +49,8 @@ Looks like JSON.Example:
   - Maintains backup copies of your database instance.
       - Secondaries can elect a new primary within seconds if your primary goes down.
       - But make sure your operation log is long enough to give you time to recover the primary when it comes back
-      
-                      Primary ---> Secondary ---> Secondary
-                          \
-                            \
-                          Secondary ----> Secondary
+
+![Replication Sets](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/ReplicationSets.png)
                           
    #### Replica Set Quirks:
    - A majority of the servers in your set must agree in the primary
@@ -71,29 +68,7 @@ Looks like JSON.Example:
   - Finally-"big data"
   - Ranges of some indexed value you specify are assigned to different replica sets.
   
-          --------------------                 -------------       ------------      -----------
-        | App Server | mango | ---------->   |  PRIMARY    | --> | SECONDARY  | -->| SECONDARY |
-        | Process    |       | \              ------------- \      ------------      -----------
-         --------------------    \                           \                                       RS1: users
-            |             \        \                          \  ------------      -----------      Min -> 1000
-            |              \         \                          | SECONDARY  | -->| SECONDARY |
-            |               \          \                         ------------      -----------
-            |                \           \                          
-            |                 \            \  -------------      ------------      -----------
-            |                  \             |  PRIMARY    | -->| SECONDARY  | -->| SECONDARY |
-            |                   \             -------------      ------------      -----------
-            |                     \                         \                                        RS2: users
-           \|/                      \                         \   -----------      -----------       1000 -> 5000
-          --------                    \                         | SECONDARY  |    | SECONDARY |
-         | Config |                     \                        ------------      -----------
-         | Server |                       \                           
-          --------                            -------------      ------------      -----------
-                                             |  PRIMARY    | -->| SECONDARY  | -->| SECONDARY |
-                                              -------------      ------------      -----------
-                                                          \                                         RS3: users
-                                                            \   ------------      -----------       5000-> max
-                                                               | SECONDARY  | -->| SECONDARY |
-                                                                ------------      -----------
+  ![Sharding](https://github.com/Kavita-Yadav/Learning-Hadoop-and-bigData/blob/master/Images/Shrading.png)
                                                               
   #### Sharding Quirks:
   
